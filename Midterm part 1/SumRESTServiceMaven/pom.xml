@@ -10,31 +10,32 @@
   	  <cxf.version>4.1.1</cxf.version>
   	  <maven.compiler.source>21</maven.compiler.source>
   	  <maven.compiler.target>21</maven.compiler.target>
+  	  <jakarta.servlet.version>6.1.0</jakarta.servlet.version>
   </properties>
   
   <dependencies>
   	  <dependency>
     	<groupId>org.apache.cxf</groupId>
         <artifactId>cxf-rt-frontend-jaxrs</artifactId>
-        <version>4.1.1</version>
+        <version>${cxf.version}</version>
       </dependency>
       
       <dependency>
     	<groupId>org.apache.cxf</groupId>
         <artifactId>cxf-rt-transports-http</artifactId>
-        <version>4.1.1</version>
+        <version>${cxf.version}</version>
 	  </dependency>
 	  
 	  <dependency>
     	<groupId>org.apache.cxf</groupId>
     	<artifactId>cxf-rt-rs-service-description</artifactId>
-    	<version>4.1.1</version>
+    	<version>${cxf.version}</version>
 	  </dependency>
 	  
 	  <dependency>
         <groupId>jakarta.servlet</groupId>
         <artifactId>jakarta.servlet-api</artifactId>
-        <version>6.1.0</version>
+        <version>${jakarta.servlet.version}</version>
         <scope>provided</scope>
       </dependency>
       

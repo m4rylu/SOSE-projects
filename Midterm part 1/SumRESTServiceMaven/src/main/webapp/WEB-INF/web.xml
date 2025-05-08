@@ -19,12 +19,6 @@
 			<param-name>jaxrs.address</param-name>
 			<param-value>/rest</param-value>
 		</init-param>
-		
-        <!--
-         http://localhost:8080/GreetingRESTServiceMaven/rest/api-docs
-         http://localhost:8080/GreetingRESTServiceMaven/rest/openapi.json 
-         https://voicebase.readthedocs.io/en/v3/how-to-guides/swagger-codegen.html#download-swagger-codegen-cli-tool
-         -->
 	</servlet>
 	
 	<servlet-mapping>
