@@ -1,2 +1,2 @@
 # sosa-project
-Repository for the 2 project developed for the Service-Oriented Software Engineering course
+Repository for the projects developed in the Service-Oriented Software Engineering course
