@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://sleep.soap.sose.it/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="SleepTrackerImplService" targetNamespace="http://sleep.soap.sose.it/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://sleep.soap.sose.it/" elementFormDefault="unqualified" targetNamespace="http://sleep.soap.sose.it/" version="1.0">
+
+  <xs:element name="addSleepTracker" type="tns:addSleepTracker"/>
+
+  <xs:element name="addSleepTrackerResponse" type="tns:addSleepTrackerResponse"/>
+
+  <xs:element name="printSleepTracker" type="tns:printSleepTracker"/>
+
+  <xs:element name="printSleepTrackerResponse" type="tns:printSleepTrackerResponse"/>
+
+  <xs:complexType name="addSleepTracker">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addSleepTrackerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="printSleepTracker">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="printSleepTrackerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="addSleepTracker">
+    <wsdl:part element="tns:addSleepTracker" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="printSleepTrackerResponse">
+    <wsdl:part element="tns:printSleepTrackerResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addSleepTrackerResponse">
+    <wsdl:part element="tns:addSleepTrackerResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="printSleepTracker">
+    <wsdl:part element="tns:printSleepTracker" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SleepTracker">
+    <wsdl:operation name="addSleepTracker">
+      <wsdl:input message="tns:addSleepTracker" name="addSleepTracker">
+    </wsdl:input>
+      <wsdl:output message="tns:addSleepTrackerResponse" name="addSleepTrackerResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="printSleepTracker">
+      <wsdl:input message="tns:printSleepTracker" name="printSleepTracker">
+    </wsdl:input>
+      <wsdl:output message="tns:printSleepTrackerResponse" name="printSleepTrackerResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SleepTrackerImplServiceSoapBinding" type="tns:SleepTracker">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="addSleepTracker">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addSleepTracker">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addSleepTrackerResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="printSleepTracker">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="printSleepTracker">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="printSleepTrackerResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SleepTrackerImplService">
+    <wsdl:port binding="tns:SleepTrackerImplServiceSoapBinding" name="SleepTrackerImplPort">
+      <soap:address location="http://localhost:8080/services/sleepTracker/sleepTracker"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

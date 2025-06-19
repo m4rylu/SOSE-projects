@@ -1,0 +1,80 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  	<modelVersion>4.0.0</modelVersion>
+  	<groupId>it.sose.soap.umor.client</groupId>
+  	<artifactId>UmorTrackerSOAPClientMaven</artifactId>
+  	<version>0.0.1-SNAPSHOT</version>
+  
+  	<properties>
+	  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	  	<cxf.version>4.1.1</cxf.version>
+	  	<java.version>21</java.version>
+  	</properties>
+  	
+  	
+  	<!-- I've added this dependencies because javafx is not included anymore in the jdk since Java 11 -->
+	<dependencies>
+		<dependency>
+  			<groupId>jakarta.xml.bind</groupId>
+  			<artifactId>jakarta.xml.bind-api</artifactId>
+  			<version>4.0.2</version>
+		</dependency>
+		
+		<dependency>
+  			<groupId>org.glassfish.jaxb</groupId>
+  			<artifactId>jaxb-runtime</artifactId>
+  			<version>4.0.2</version>
+		</dependency>
+
+		<dependency>
+  			<groupId>jakarta.xml.ws</groupId>
+  			<artifactId>jakarta.xml.ws-api</artifactId>
+  			<version>4.0.2</version>
+		</dependency>
+		
+		<dependency>
+  			<groupId>com.sun.xml.ws</groupId>
+  			<artifactId>rt</artifactId> <!-- Metro runtime -->
+  			<version>3.0.2</version>
+		</dependency>
+	</dependencies>
+  
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.14.0</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-codegen-plugin</artifactId>
+				<version>${cxf.version}</version>
+				<executions>
+					<execution>
+						<id>generate-sources</id>
+						<phase>generate-sources</phase>
+						<configuration>
+							<sourceRoot>${project.build.directory}/generated-sources/cxf</sourceRoot>
+							<wsdlOptions>
+								<wsdlOption>
+									<wsdl>${basedir}/src/main/resources/umor.wsdl</wsdl>
+								</wsdlOption>
+							</wsdlOptions>
+						</configuration>
+						<goals>
+							<goal>wsdl2java</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+
+		<finalName>UmorTrackerClientMaven</finalName>
+	</build>
+</project>
