@@ -1,0 +1,4 @@
+it\sose\rest\weather\controller\WeatherControllerwithConstructorInjection.class
+it\sose\rest\weather\service\WeatherTracker.class
+it\sose\rest\weather\service\WeatherTrackerImpl.class
+it\sose\rest\weather\WeatherTrackerApplication.class

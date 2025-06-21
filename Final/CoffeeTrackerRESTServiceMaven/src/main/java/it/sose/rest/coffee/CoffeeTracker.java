@@ -6,16 +6,15 @@ import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
-@Path("/coffeeTracker")
 public interface CoffeeTracker {
 	
 	@GET
-	@Path("/printCoffeeTracker")
+	@Path("/print")
 	@Produces(MediaType.TEXT_PLAIN)
 	String printCoffeeTracker ();
 	
 	@GET
-	@Path("/addCoffeeTracker/{a}")
+	@Path("/add/{a}")
 	@Produces((MediaType.TEXT_PLAIN))
 	String addCoffeeTracker(@PathParam("a")int a);
 	

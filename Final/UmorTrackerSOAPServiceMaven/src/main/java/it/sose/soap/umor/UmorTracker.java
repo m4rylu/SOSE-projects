@@ -6,9 +6,9 @@ import jakarta.jws.WebService;
 @WebService
 public interface UmorTracker {
 
-	@WebMethod
+	@WebMethod(operationName = "print")
 	public String printUmorTracker();
 	
-	@WebMethod
+	@WebMethod(operationName = "add")
 	public String addUmorTracker(int humor);
 }

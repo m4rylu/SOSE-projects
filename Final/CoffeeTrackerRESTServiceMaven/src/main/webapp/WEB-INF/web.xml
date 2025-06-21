@@ -17,7 +17,7 @@
 		</init-param>
 		<init-param>
 			<param-name>jaxrs.address</param-name>
-			<param-value>/rest</param-value>
+			<param-value>/coffee</param-value>
 		</init-param>
 	</servlet>
 	

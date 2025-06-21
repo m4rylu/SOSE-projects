@@ -49,5 +49,24 @@ public class WeatherTrackerImpl implements WeatherTracker {
 		return "Value updated for day:"+today.toString();
 	}
 	
+	@Override
+	public int[] last7DaysValue() {
+		
+		int[] lastValues = new int[8];
+		
+		LocalDate today = LocalDate.now();
+		
+		for(int i=1; i<8; i++) {
+			LocalDate date = today.minusDays(i);
+			int new_month = date.getMonthValue();
+			int new_day = date.getDayOfMonth();
+			
+			int val = weatherMatrix[new_month][new_day];
+			lastValues[i] = val;
+		}
+		
+		return lastValues;
+	}
+	
 	
 }

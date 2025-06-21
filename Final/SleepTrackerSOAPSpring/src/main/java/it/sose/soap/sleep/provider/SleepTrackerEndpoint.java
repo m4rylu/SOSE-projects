@@ -15,11 +15,11 @@ import it.sose.soap.sleep.PrintSleepTracker;
 import it.sose.soap.sleep.PrintSleepTrackerResponse;
 
 @Endpoint
-public class DreamTrackerEndpoint {
+public class SleepTrackerEndpoint {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(DreamTrackerEndpoint.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(SleepTrackerEndpoint.class);
 
-	@PayloadRoot(namespace = "http:/sleep.soap.sose.it", localPart = "printSleepTracker")
+	@PayloadRoot(namespace = "http://sleep.soap.sose.it", localPart = "print")
 	@ResponsePayload
 	public PrintSleepTrackerResponse printSleepTracker(@RequestPayload PrintSleepTracker request) {
 
@@ -34,10 +34,10 @@ public class DreamTrackerEndpoint {
 		return response;
 	}
 	
-	@PayloadRoot(namespace = "http:/sleep.soap.sose.it", localPart = "addSleepTracker")
+	@PayloadRoot(namespace = "http://sleep.soap.sose.it", localPart = "add")
 	@ResponsePayload
 	public AddSleepTrackerResponse addSleepTracker(@RequestPayload AddSleepTracker request) {
-		LOGGER.info("**** 'SumEndpoint' RECEIVED A REQUEST FOR 'noSafeSum(arg0={})'", request.getArg0());
+		LOGGER.info("**** 'SleepTrackerEndpoint' RECEIVED A REQUEST FOR 'addSleepTracker(arg0={})'", request.getArg0());
 
 		ObjectFactory factory = new ObjectFactory();
 		AddSleepTrackerResponse response = factory.createAddSleepTrackerResponse();

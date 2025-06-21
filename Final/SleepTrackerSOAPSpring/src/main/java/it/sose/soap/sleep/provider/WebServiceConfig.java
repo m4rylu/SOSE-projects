@@ -14,7 +14,6 @@ import org.springframework.ws.wsdl.wsdl11.Wsdl11Definition;
 @EnableWs
 @Configuration
 
-//WSConfigurerAdapter is deprecated
 public class WebServiceConfig  {
 
 	@Bean
@@ -23,7 +22,7 @@ public class WebServiceConfig  {
 		MessageDispatcherServlet servlet = new MessageDispatcherServlet();
 		servlet.setApplicationContext(applicationContext);
 
-		return new ServletRegistrationBean<>(servlet, "/sleepTracker/*");
+		return new ServletRegistrationBean<>(servlet, "/SleepTrackerSOAPSpring/*");
 	}
 
 	@Bean(name = "sleepTracker")
@@ -31,7 +30,7 @@ public class WebServiceConfig  {
 		
 		SimpleWsdl11Definition wsdl11Definition = new SimpleWsdl11Definition();
 		
-		// The wsdl can be accessed at http://localhost:8080/mycourse/springws/sum_soap_spring_ws_migrated/sumRefined.wsdl
+		// The wsdl can be accessed at http://localhost:8080/sleep/sleepTracker.wsdl
 		wsdl11Definition.setWsdl(new ClassPathResource("/wsdl/SleepService.wsdl"));
 
 		return wsdl11Definition;

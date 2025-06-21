@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
-@RequestMapping("/weatherTracker")
+@RequestMapping("/WeatherTrackerRESTSpring")
 public class WeatherControllerwithConstructorInjection {
 
 	// **** For the Constructor Injection this can be declared final ****
@@ -28,4 +28,10 @@ public class WeatherControllerwithConstructorInjection {
     public String add(@RequestParam int a) {
         return weatherTracker.addWeatherTracker(a);
     }
+    
+    @GetMapping("/lastValues")
+    public int[] lastValues() {
+    	return weatherTracker.last7DaysValue();
+    }
+    
 }
