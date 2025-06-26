@@ -50,7 +50,7 @@ public class WeatherTrackerImpl implements WeatherTracker {
 	}
 	
 	@Override
-	public int[] last7DaysValue() {
+	public int[] last7DaysValues() {
 		
 		int[] lastValues = new int[8];
 		

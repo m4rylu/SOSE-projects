@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://sleep.soap.sose.it"
+    xmlns:tns="http://sleep.soap.sose.it"
+    elementFormDefault="qualified"
+    version="1.0">
+
+
+  <xs:element name="addSleepTrackerRequest">
+  	<xs:complexType>
+      <xs:sequence>
+        <xs:element name="arg0" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+    <xs:element name="addSleepTrackerResponse">
+  	<xs:complexType>
+      <xs:sequence>
+        <xs:element name="return" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="last7DaysValuesRequest">
+  	<xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+  
+    <xs:element name="last7DaysValuesResponse">
+  	<xs:complexType>
+      <xs:sequence>
+        <xs:element name="return" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="printSleepTrackerRequest">
+  	<xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+  
+    <xs:element name="printSleepTrackerResponse">
+  	<xs:complexType>
+      <xs:sequence>
+        <xs:element name="return" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

@@ -11,4 +11,7 @@ public interface UmorTracker {
 	
 	@WebMethod(operationName = "add")
 	public String addUmorTracker(int humor);
+	
+	@WebMethod(operationName= "lastValues")
+	public int[] last7DaysValues();
 }

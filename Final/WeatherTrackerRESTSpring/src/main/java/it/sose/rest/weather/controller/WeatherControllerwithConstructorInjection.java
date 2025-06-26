@@ -31,7 +31,7 @@ public class WeatherControllerwithConstructorInjection {
     
     @GetMapping("/lastValues")
     public int[] lastValues() {
-    	return weatherTracker.last7DaysValue();
+    	return weatherTracker.last7DaysValues();
     }
     
 }

@@ -18,5 +18,9 @@ public interface CoffeeTracker {
 	@Produces((MediaType.TEXT_PLAIN))
 	String addCoffeeTracker(@PathParam("a")int a);
 	
+	@GET
+	@Path("/lastValues")
+	@Produces((MediaType.TEXT_PLAIN))
+	String last7DaysValues();
 	
 }
