@@ -1,6 +1,7 @@
 package it.sose.soap.umor;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 
 public class UmorTrackerImpl implements UmorTracker {
 	
@@ -48,7 +49,7 @@ public class UmorTrackerImpl implements UmorTracker {
 	}
 	
 	@Override
-	public int[] last7DaysValues() {
+	public String last7DaysValues() {
 		
 		int[] lastValues = new int[8];
 		
@@ -63,7 +64,7 @@ public class UmorTrackerImpl implements UmorTracker {
 			lastValues[i] = val;
 		}
 		
-		return lastValues;
+		return Arrays.toString(lastValues);
 	}
 	
 

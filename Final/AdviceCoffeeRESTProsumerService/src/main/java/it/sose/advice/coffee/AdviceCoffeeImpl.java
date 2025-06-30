@@ -24,20 +24,20 @@ public class AdviceCoffeeImpl implements AdviceCoffee{
 		int sleepSum = 0;
 		String advice;
 		
-		// client for coffee service REST
+		// asyncronous client for coffee service REST
 		Client client = ClientBuilder.newClient();
 		Callback coffeeHandler = new Callback();
 		
 		Future<Response> futureCoffeeResponse = client.target("http://localhost:8080/CoffeeTrackerRESTServiceMaven/coffee/lastValues").request().async().get(coffeeHandler);
 		
-		//client for sleep service SOAP
+		// asyncronous client for sleep service SOAP
 		SleepTrackerPortService service = new SleepTrackerPortService();
 		SleepTrackerPort endpoint = service.getSleepTrackerPortSoap11();
 		Last7DaysValuesRequest request = new Last7DaysValuesRequest();
 		SOAPAsynchHandler sleepHandler = new SOAPAsynchHandler();
 		
 		Future<?> futureSleepResponse = endpoint.last7DaysValuesAsync(request, sleepHandler);
-		
+
 		while(!futureCoffeeResponse.isDone() || !futureSleepResponse.isDone()) {
 			//The prosumer wait for both the result syncronizing the 2 processes
 			try {
@@ -47,9 +47,9 @@ public class AdviceCoffeeImpl implements AdviceCoffee{
 			}
 		}
 		
-
 		String coffeeResponse = coffeeHandler.getResponse();
 		String sleepResponse = sleepHandler.getResponse().getReturn();
+		
 	    if (coffeeResponse == null || sleepResponse == null) {
 	        return "Errore nel recuperare i dati dai servizi.";
 	    }

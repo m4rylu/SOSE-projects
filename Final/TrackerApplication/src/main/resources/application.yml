@@ -1,0 +1,16 @@
+# Port of the gateway
+server:
+  port: 8087
+  
+# Gateway configuration
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: coffee_route
+          uri: http://localhost:8080
+          predicates:
+          - Path=/api/coffee/**
+          filters:
+          - RewritePath=/api/coffee/(?<segment>.*), /CoffeeTrackerRESTServiceMaven/coffee/${segment}
+   
