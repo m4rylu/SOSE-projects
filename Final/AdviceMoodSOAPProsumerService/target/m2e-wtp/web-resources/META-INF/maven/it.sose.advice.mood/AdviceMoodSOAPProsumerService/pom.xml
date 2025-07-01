@@ -1,0 +1,133 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.4.4</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+  <groupId>it.sose.advice.mood</groupId>
+  <artifactId>AdviceMoodSOAPProsumerService</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  
+  <properties>
+  	  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  	  <cxf.version>4.1.1</cxf.version>
+  	  <maven.compiler.source>21</maven.compiler.source>
+  	  <maven.compiler.target>21</maven.compiler.target>
+  	  <jakarta.servlet.version>6.1.0</jakarta.servlet.version>
+  </properties>
+  
+  <dependencies>
+  <!--soap services provider dependency-->
+  	  <dependency>
+    	<groupId>org.apache.cxf</groupId>
+        <artifactId>cxf-rt-frontend-jaxws</artifactId>
+        <version>${cxf.version}</version>
+      </dependency>
+      
+      <dependency>
+    	<groupId>org.apache.cxf</groupId>
+        <artifactId>cxf-rt-transports-http</artifactId>
+        <version>${cxf.version}</version>
+	  </dependency>
+	  
+	  <dependency>
+    	<groupId>org.apache.cxf</groupId>
+    	<artifactId>cxf-rt-rs-service-description</artifactId>
+    	<version>${cxf.version}</version>
+	  </dependency>
+	  
+	  <dependency>
+        <groupId>jakarta.servlet</groupId>
+        <artifactId>jakarta.servlet-api</artifactId>
+        <version>${jakarta.servlet.version}</version>
+        <scope>provided</scope>
+      </dependency>
+      
+      <!-- client rest dependency-->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-rs-client</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+		
+  </dependencies>
+  
+  <build>
+	  <plugins>
+		  <plugin>
+			  <groupId>org.apache.maven.plugins</groupId>
+			  <artifactId>maven-compiler-plugin</artifactId>
+			  <version>3.14.0</version>
+			  <configuration>
+				  <source>${maven.compiler.source}</source>
+				  <target>${maven.compiler.target}</target>
+				  <encoding>${project.build.sourceEncoding}</encoding>
+			  </configuration>
+		  </plugin>
+		  
+			<plugin>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-codegen-plugin</artifactId>
+				<version>${cxf.version}</version>
+				<executions>
+					<execution>
+						<id>generate-sources</id>
+						<phase>generate-sources</phase>
+						<configuration>
+							<sourceRoot>${project.build.directory}/generated-sources/cxf</sourceRoot>
+							<wsdlOptions>
+								<wsdlOption>
+									<wsdl>${basedir}/src/main/resources/UmorTracker.wsdl</wsdl>
+									<extraargs>
+              						 <extraarg>-asyncMethods</extraarg>
+              						 <!-- stampa metodi per polling (?) -->
+              						 <extraarg>-bareMethods</extraarg>
+            						</extraargs>
+								</wsdlOption>								
+							</wsdlOptions>
+						</configuration>
+						<goals>
+							<goal>wsdl2java</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		  
+		  
+		</plugins>
+
+		<finalName>AdviceMoodSOAPProsumerServiceMaven</finalName>
+	</build>
+	
+	<profiles>
+	
+		<!-- launch the command mvn clean verify -PdeployOnTomcatTest1 -->
+		<!-- or mvn -PdeployOnTomcatTest1 -->
+		<profile>
+			<id>deployOnTomcatTest1</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+
+			<build>
+				<!-- execute these goals for generating the war -->
+				<defaultGoal>clean verify</defaultGoal>
+
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-war-plugin</artifactId>
+						<version>3.4.0</version>
+						<configuration>
+							<outputDirectory>${project.basedir}/../../apache-tomcat-11.0.4/webapps</outputDirectory>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+</project>
