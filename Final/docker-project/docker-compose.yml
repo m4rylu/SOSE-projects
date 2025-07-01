@@ -1,0 +1,14 @@
+services:
+  Gateway:
+    build: ./Gateway
+    container_name: Gateway
+    ports:
+      - "8087:8087"
+    depends_on:
+      - coffee-service
+
+  Coffee-service:
+    build: ./Coffee-service
+    container_name: Coffee-service
+    ports:
+      - "8080:8080"

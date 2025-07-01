@@ -1,0 +1,13 @@
+server:
+  port: 8087
+  
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: coffee
+          uri: http://localhost:8080
+          predicates:
+          - Path=/api/coffee/**
+          filters:
+          - RewritePath=/api/coffee/(?<segment>.*), /CoffeeTrackerRESTServiceMaven/coffee/${segment}
