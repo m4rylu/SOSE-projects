@@ -1,8 +1,4 @@
-FROM eclipse-temurin:21-jdk
-
-RUN apt-get update && \
-    apt-get install -y maven && \
-    rm -rf /var/lib/apt/lists/*
+FROM maven:3.9.6-eclipse-temurin-21
 
 WORKDIR /app
 COPY . .

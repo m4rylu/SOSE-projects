@@ -8,7 +8,7 @@ public class UmorTrackerSOAPClient {
 	public static void main(String[] args) {
 		UmorTrackerImplService service = new UmorTrackerImplService();
 		UmorTracker port = service.getUmorTrackerImplPort();
-		String response = port.addUmorTracker(5);
+		String response = port.add(5);
 		 System.out.println("response is:"+response);
 	}
 }

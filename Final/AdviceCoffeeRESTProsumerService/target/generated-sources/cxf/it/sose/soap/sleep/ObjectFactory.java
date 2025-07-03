@@ -30,63 +30,63 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AddSleepTrackerRequest }
+     * Create an instance of {@link AddRequest }
      * 
      * @return
-     *     the new instance of {@link AddSleepTrackerRequest }
+     *     the new instance of {@link AddRequest }
      */
-    public AddSleepTrackerRequest createAddSleepTrackerRequest() {
-        return new AddSleepTrackerRequest();
+    public AddRequest createAddRequest() {
+        return new AddRequest();
     }
 
     /**
-     * Create an instance of {@link AddSleepTrackerResponse }
+     * Create an instance of {@link AddResponse }
      * 
      * @return
-     *     the new instance of {@link AddSleepTrackerResponse }
+     *     the new instance of {@link AddResponse }
      */
-    public AddSleepTrackerResponse createAddSleepTrackerResponse() {
-        return new AddSleepTrackerResponse();
+    public AddResponse createAddResponse() {
+        return new AddResponse();
     }
 
     /**
-     * Create an instance of {@link Last7DaysValuesRequest }
+     * Create an instance of {@link LastValuesRequest }
      * 
      * @return
-     *     the new instance of {@link Last7DaysValuesRequest }
+     *     the new instance of {@link LastValuesRequest }
      */
-    public Last7DaysValuesRequest createLast7DaysValuesRequest() {
-        return new Last7DaysValuesRequest();
+    public LastValuesRequest createLastValuesRequest() {
+        return new LastValuesRequest();
     }
 
     /**
-     * Create an instance of {@link Last7DaysValuesResponse }
+     * Create an instance of {@link LastValuesResponse }
      * 
      * @return
-     *     the new instance of {@link Last7DaysValuesResponse }
+     *     the new instance of {@link LastValuesResponse }
      */
-    public Last7DaysValuesResponse createLast7DaysValuesResponse() {
-        return new Last7DaysValuesResponse();
+    public LastValuesResponse createLastValuesResponse() {
+        return new LastValuesResponse();
     }
 
     /**
-     * Create an instance of {@link PrintSleepTrackerRequest }
+     * Create an instance of {@link PrintRequest }
      * 
      * @return
-     *     the new instance of {@link PrintSleepTrackerRequest }
+     *     the new instance of {@link PrintRequest }
      */
-    public PrintSleepTrackerRequest createPrintSleepTrackerRequest() {
-        return new PrintSleepTrackerRequest();
+    public PrintRequest createPrintRequest() {
+        return new PrintRequest();
     }
 
     /**
-     * Create an instance of {@link PrintSleepTrackerResponse }
+     * Create an instance of {@link PrintResponse }
      * 
      * @return
-     *     the new instance of {@link PrintSleepTrackerResponse }
+     *     the new instance of {@link PrintResponse }
      */
-    public PrintSleepTrackerResponse createPrintSleepTrackerResponse() {
-        return new PrintSleepTrackerResponse();
+    public PrintResponse createPrintResponse() {
+        return new PrintResponse();
     }
 
 }

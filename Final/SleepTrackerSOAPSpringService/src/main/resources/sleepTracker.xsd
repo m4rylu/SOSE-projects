@@ -7,7 +7,7 @@
     version="1.0">
 
 
-  <xs:element name="addSleepTrackerRequest">
+  <xs:element name="addRequest">
   	<xs:complexType>
       <xs:sequence>
         <xs:element name="arg0" type="xs:int"/>
@@ -15,7 +15,7 @@
     </xs:complexType>
   </xs:element>
   
-    <xs:element name="addSleepTrackerResponse">
+    <xs:element name="addResponse">
   	<xs:complexType>
       <xs:sequence>
         <xs:element name="return" type="xs:string"/>
@@ -23,13 +23,13 @@
     </xs:complexType>
   </xs:element>
 
-  <xs:element name="last7DaysValuesRequest">
+  <xs:element name="lastValuesRequest">
   	<xs:complexType>
       <xs:sequence/>
     </xs:complexType>
   </xs:element>
   
-    <xs:element name="last7DaysValuesResponse">
+    <xs:element name="lastValuesResponse">
   	<xs:complexType>
       <xs:sequence>
         <xs:element name="return" type="xs:string"/>
@@ -37,13 +37,13 @@
     </xs:complexType>
   </xs:element>
 
-  <xs:element name="printSleepTrackerRequest">
+  <xs:element name="printRequest">
   	<xs:complexType>
       <xs:sequence/>
     </xs:complexType>
   </xs:element>
   
-    <xs:element name="printSleepTrackerResponse">
+    <xs:element name="printResponse">
   	<xs:complexType>
       <xs:sequence>
         <xs:element name="return" type="xs:string"/>

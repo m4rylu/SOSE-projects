@@ -13,3 +13,31 @@ spring:
               - Path=/api/coffee/**
               filters:
               - RewritePath=/api/coffee/(?<segment>.*), /CoffeeTrackerRESTServiceMaven/coffee/${segment}
+
+            - id: sleep
+              uri: http://sleep-service:8082
+              predicates:
+              - Path=/api/sleep/**
+              filters:
+              - RewritePath=/api/sleep/(?<segment>.*), /
+
+            - id: rate
+              uri: http://rate-service:8084
+              predicates:
+              - Path=/api/rate/**
+              filters:
+              - RewritePath=/api/rate/(?<segment>.*), /RateMyDayTrackerRESTServiceMaven/rate/${segment}
+              
+            - id: humor-adapter
+              uri: http://humor-adapter:8088
+              predicates:
+              - Path=/api/humor/**
+              filters:
+              - RewritePath=/api/humor/(?<segment>.*), /api/adapter/humor/${segment}
+
+            - id: advice-coffee
+              uri: http://advice-coffee-service:8081
+              predicates:
+              - Path=/api/advice/coffee/**
+              filters:
+              - RewritePath=/api/advice/coffee/(?<segment>.*), /AdviceCoffeeRESTProsumerService/coffeeAdvice/${segment}

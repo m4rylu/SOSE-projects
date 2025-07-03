@@ -1,0 +1,14 @@
+it\sose\soap\sleep\SleepTrackerPortService.class
+it\sose\soap\sleep\AddRequest.class
+it\sose\soap\sleep\PrintResponse.class
+it\sose\soap\sleep\LastValuesRequest.class
+it\sose\soap\sleep\LastValuesResponse.class
+it\sose\soap\sleep\ObjectFactory.class
+it\sose\soap\sleep\SleepTrackerPort.class
+it\sose\advice\coffee\Callback.class
+it\sose\advice\coffee\SOAPAsynchHandler.class
+it\sose\soap\sleep\AddResponse.class
+it\sose\soap\sleep\package-info.class
+it\sose\advice\coffee\AdviceCoffee.class
+it\sose\soap\sleep\PrintRequest.class
+it\sose\advice\coffee\AdviceCoffeeImpl.class

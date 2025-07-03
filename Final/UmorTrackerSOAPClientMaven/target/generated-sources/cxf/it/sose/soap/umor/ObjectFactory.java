@@ -24,10 +24,12 @@ import jakarta.xml.bind.annotation.XmlRegistry;
 @XmlRegistry
 public class ObjectFactory {
 
-    private static final QName _AddUmorTracker_QNAME = new QName("http://umor.soap.sose.it/", "addUmorTracker");
-    private static final QName _AddUmorTrackerResponse_QNAME = new QName("http://umor.soap.sose.it/", "addUmorTrackerResponse");
-    private static final QName _PrintUmorTracker_QNAME = new QName("http://umor.soap.sose.it/", "printUmorTracker");
-    private static final QName _PrintUmorTrackerResponse_QNAME = new QName("http://umor.soap.sose.it/", "printUmorTrackerResponse");
+    private static final QName _Add_QNAME = new QName("http://umor.soap.sose.it/", "add");
+    private static final QName _AddResponse_QNAME = new QName("http://umor.soap.sose.it/", "addResponse");
+    private static final QName _LastValues_QNAME = new QName("http://umor.soap.sose.it/", "lastValues");
+    private static final QName _LastValuesResponse_QNAME = new QName("http://umor.soap.sose.it/", "lastValuesResponse");
+    private static final QName _Print_QNAME = new QName("http://umor.soap.sose.it/", "print");
+    private static final QName _PrintResponse_QNAME = new QName("http://umor.soap.sose.it/", "printResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: it.sose.soap.umor
@@ -37,95 +39,141 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AddUmorTracker }
+     * Create an instance of {@link Add }
      * 
      * @return
-     *     the new instance of {@link AddUmorTracker }
+     *     the new instance of {@link Add }
      */
-    public AddUmorTracker createAddUmorTracker() {
-        return new AddUmorTracker();
+    public Add createAdd() {
+        return new Add();
     }
 
     /**
-     * Create an instance of {@link AddUmorTrackerResponse }
+     * Create an instance of {@link AddResponse }
      * 
      * @return
-     *     the new instance of {@link AddUmorTrackerResponse }
+     *     the new instance of {@link AddResponse }
      */
-    public AddUmorTrackerResponse createAddUmorTrackerResponse() {
-        return new AddUmorTrackerResponse();
+    public AddResponse createAddResponse() {
+        return new AddResponse();
     }
 
     /**
-     * Create an instance of {@link PrintUmorTracker }
+     * Create an instance of {@link LastValues }
      * 
      * @return
-     *     the new instance of {@link PrintUmorTracker }
+     *     the new instance of {@link LastValues }
      */
-    public PrintUmorTracker createPrintUmorTracker() {
-        return new PrintUmorTracker();
+    public LastValues createLastValues() {
+        return new LastValues();
     }
 
     /**
-     * Create an instance of {@link PrintUmorTrackerResponse }
+     * Create an instance of {@link LastValuesResponse }
      * 
      * @return
-     *     the new instance of {@link PrintUmorTrackerResponse }
+     *     the new instance of {@link LastValuesResponse }
      */
-    public PrintUmorTrackerResponse createPrintUmorTrackerResponse() {
-        return new PrintUmorTrackerResponse();
+    public LastValuesResponse createLastValuesResponse() {
+        return new LastValuesResponse();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AddUmorTracker }{@code >}
+     * Create an instance of {@link Print }
+     * 
+     * @return
+     *     the new instance of {@link Print }
+     */
+    public Print createPrint() {
+        return new Print();
+    }
+
+    /**
+     * Create an instance of {@link PrintResponse }
+     * 
+     * @return
+     *     the new instance of {@link PrintResponse }
+     */
+    public PrintResponse createPrintResponse() {
+        return new PrintResponse();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Add }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link AddUmorTracker }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link Add }{@code >}
      */
-    @XmlElementDecl(namespace = "http://umor.soap.sose.it/", name = "addUmorTracker")
-    public JAXBElement<AddUmorTracker> createAddUmorTracker(AddUmorTracker value) {
-        return new JAXBElement<>(_AddUmorTracker_QNAME, AddUmorTracker.class, null, value);
+    @XmlElementDecl(namespace = "http://umor.soap.sose.it/", name = "add")
+    public JAXBElement<Add> createAdd(Add value) {
+        return new JAXBElement<>(_Add_QNAME, Add.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AddUmorTrackerResponse }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddResponse }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link AddUmorTrackerResponse }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link AddResponse }{@code >}
      */
-    @XmlElementDecl(namespace = "http://umor.soap.sose.it/", name = "addUmorTrackerResponse")
-    public JAXBElement<AddUmorTrackerResponse> createAddUmorTrackerResponse(AddUmorTrackerResponse value) {
-        return new JAXBElement<>(_AddUmorTrackerResponse_QNAME, AddUmorTrackerResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://umor.soap.sose.it/", name = "addResponse")
+    public JAXBElement<AddResponse> createAddResponse(AddResponse value) {
+        return new JAXBElement<>(_AddResponse_QNAME, AddResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link PrintUmorTracker }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link LastValues }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link PrintUmorTracker }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link LastValues }{@code >}
      */
-    @XmlElementDecl(namespace = "http://umor.soap.sose.it/", name = "printUmorTracker")
-    public JAXBElement<PrintUmorTracker> createPrintUmorTracker(PrintUmorTracker value) {
-        return new JAXBElement<>(_PrintUmorTracker_QNAME, PrintUmorTracker.class, null, value);
+    @XmlElementDecl(namespace = "http://umor.soap.sose.it/", name = "lastValues")
+    public JAXBElement<LastValues> createLastValues(LastValues value) {
+        return new JAXBElement<>(_LastValues_QNAME, LastValues.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link PrintUmorTrackerResponse }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link LastValuesResponse }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link PrintUmorTrackerResponse }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link LastValuesResponse }{@code >}
      */
-    @XmlElementDecl(namespace = "http://umor.soap.sose.it/", name = "printUmorTrackerResponse")
-    public JAXBElement<PrintUmorTrackerResponse> createPrintUmorTrackerResponse(PrintUmorTrackerResponse value) {
-        return new JAXBElement<>(_PrintUmorTrackerResponse_QNAME, PrintUmorTrackerResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://umor.soap.sose.it/", name = "lastValuesResponse")
+    public JAXBElement<LastValuesResponse> createLastValuesResponse(LastValuesResponse value) {
+        return new JAXBElement<>(_LastValuesResponse_QNAME, LastValuesResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Print }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Print }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://umor.soap.sose.it/", name = "print")
+    public JAXBElement<Print> createPrint(Print value) {
+        return new JAXBElement<>(_Print_QNAME, Print.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link PrintResponse }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link PrintResponse }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://umor.soap.sose.it/", name = "printResponse")
+    public JAXBElement<PrintResponse> createPrintResponse(PrintResponse value) {
+        return new JAXBElement<>(_PrintResponse_QNAME, PrintResponse.class, null, value);
     }
 
 }

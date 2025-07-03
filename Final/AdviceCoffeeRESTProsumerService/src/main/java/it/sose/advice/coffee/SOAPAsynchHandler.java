@@ -1,23 +1,23 @@
 package it.sose.advice.coffee;
 
-import it.sose.soap.sleep.Last7DaysValuesResponse;
+import it.sose.soap.sleep.LastValuesResponse;
 import jakarta.xml.ws.AsyncHandler;
 import jakarta.xml.ws.Response;
 
-public class SOAPAsynchHandler implements AsyncHandler<Last7DaysValuesResponse> {
+public class SOAPAsynchHandler implements AsyncHandler<LastValuesResponse> {
 
-	private Last7DaysValuesResponse last7DaysValuesResponse;
+	private LastValuesResponse lastValuesResponse;
 
 	@Override
-	public void handleResponse(Response<Last7DaysValuesResponse> response) {
+	public void handleResponse(Response<LastValuesResponse> response) {
 		try {
-			last7DaysValuesResponse = response.get();
+			lastValuesResponse = response.get();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	public Last7DaysValuesResponse getResponse() {
-		return last7DaysValuesResponse;
+	public LastValuesResponse getResponse() {
+		return lastValuesResponse;
 	}
 }

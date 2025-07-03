@@ -1,91 +1,105 @@
-<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://umor.soap.sose.it/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="UmorTrackerImplService" targetNamespace="http://umor.soap.sose.it/">
-  <wsdl:types>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://umor.soap.sose.it/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="UmorTrackerImplService" targetNamespace="http://umor.soap.sose.it/">
+<wsdl:types>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://umor.soap.sose.it/" elementFormDefault="unqualified" targetNamespace="http://umor.soap.sose.it/" version="1.0">
-
-  <xs:element name="addUmorTracker" type="tns:addUmorTracker"/>
-
-  <xs:element name="addUmorTrackerResponse" type="tns:addUmorTrackerResponse"/>
-
-  <xs:element name="printUmorTracker" type="tns:printUmorTracker"/>
-
-  <xs:element name="printUmorTrackerResponse" type="tns:printUmorTrackerResponse"/>
-
-  <xs:complexType name="printUmorTracker">
-    <xs:sequence/>
-  </xs:complexType>
-
-  <xs:complexType name="printUmorTrackerResponse">
-    <xs:sequence/>
-  </xs:complexType>
-
-  <xs:complexType name="addUmorTracker">
-    <xs:sequence>
-      <xs:element name="arg0" type="xs:int"/>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="addUmorTrackerResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:boolean"/>
-    </xs:sequence>
-  </xs:complexType>
-
+<xs:element name="add" type="tns:add"/>
+<xs:element name="addResponse" type="tns:addResponse"/>
+<xs:element name="lastValues" type="tns:lastValues"/>
+<xs:element name="lastValuesResponse" type="tns:lastValuesResponse"/>
+<xs:element name="print" type="tns:print"/>
+<xs:element name="printResponse" type="tns:printResponse"/>
+<xs:complexType name="lastValues">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="lastValuesResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="print">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="printResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="add">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
 </xs:schema>
-  </wsdl:types>
-  <wsdl:message name="printUmorTrackerResponse">
-    <wsdl:part element="tns:printUmorTrackerResponse" name="parameters">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="printUmorTracker">
-    <wsdl:part element="tns:printUmorTracker" name="parameters">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="addUmorTrackerResponse">
-    <wsdl:part element="tns:addUmorTrackerResponse" name="parameters">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:message name="addUmorTracker">
-    <wsdl:part element="tns:addUmorTracker" name="parameters">
-    </wsdl:part>
-  </wsdl:message>
-  <wsdl:portType name="UmorTracker">
-    <wsdl:operation name="printUmorTracker">
-      <wsdl:input message="tns:printUmorTracker" name="printUmorTracker">
-    </wsdl:input>
-      <wsdl:output message="tns:printUmorTrackerResponse" name="printUmorTrackerResponse">
-    </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="addUmorTracker">
-      <wsdl:input message="tns:addUmorTracker" name="addUmorTracker">
-    </wsdl:input>
-      <wsdl:output message="tns:addUmorTrackerResponse" name="addUmorTrackerResponse">
-    </wsdl:output>
-    </wsdl:operation>
-  </wsdl:portType>
-  <wsdl:binding name="UmorTrackerImplServiceSoapBinding" type="tns:UmorTracker">
-    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-    <wsdl:operation name="printUmorTracker">
-      <soap:operation soapAction="" style="document"/>
-      <wsdl:input name="printUmorTracker">
-        <soap:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output name="printUmorTrackerResponse">
-        <soap:body use="literal"/>
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="addUmorTracker">
-      <soap:operation soapAction="" style="document"/>
-      <wsdl:input name="addUmorTracker">
-        <soap:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output name="addUmorTrackerResponse">
-        <soap:body use="literal"/>
-      </wsdl:output>
-    </wsdl:operation>
-  </wsdl:binding>
-  <wsdl:service name="UmorTrackerImplService">
-    <wsdl:port binding="tns:UmorTrackerImplServiceSoapBinding" name="UmorTrackerImplPort">
-      <soap:address location="http://localhost:8080/UmorTrackerSOAPServiceMaven/umor"/>
-    </wsdl:port>
-  </wsdl:service>
+</wsdl:types>
+<wsdl:message name="lastValuesResponse">
+<wsdl:part element="tns:lastValuesResponse" name="parameters"> </wsdl:part>
+</wsdl:message>
+<wsdl:message name="lastValues">
+<wsdl:part element="tns:lastValues" name="parameters"> </wsdl:part>
+</wsdl:message>
+<wsdl:message name="addResponse">
+<wsdl:part element="tns:addResponse" name="parameters"> </wsdl:part>
+</wsdl:message>
+<wsdl:message name="print">
+<wsdl:part element="tns:print" name="parameters"> </wsdl:part>
+</wsdl:message>
+<wsdl:message name="printResponse">
+<wsdl:part element="tns:printResponse" name="parameters"> </wsdl:part>
+</wsdl:message>
+<wsdl:message name="add">
+<wsdl:part element="tns:add" name="parameters"> </wsdl:part>
+</wsdl:message>
+<wsdl:portType name="UmorTracker">
+<wsdl:operation name="lastValues">
+<wsdl:input message="tns:lastValues" name="lastValues"> </wsdl:input>
+<wsdl:output message="tns:lastValuesResponse" name="lastValuesResponse"> </wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="print">
+<wsdl:input message="tns:print" name="print"> </wsdl:input>
+<wsdl:output message="tns:printResponse" name="printResponse"> </wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="add">
+<wsdl:input message="tns:add" name="add"> </wsdl:input>
+<wsdl:output message="tns:addResponse" name="addResponse"> </wsdl:output>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="UmorTrackerImplServiceSoapBinding" type="tns:UmorTracker">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="lastValues">
+<soap:operation soapAction="" style="document"/>
+<wsdl:input name="lastValues">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="lastValuesResponse">
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="print">
+<soap:operation soapAction="" style="document"/>
+<wsdl:input name="print">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="printResponse">
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="add">
+<soap:operation soapAction="" style="document"/>
+<wsdl:input name="add">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="addResponse">
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="UmorTrackerImplService">
+<wsdl:port binding="tns:UmorTrackerImplServiceSoapBinding" name="UmorTrackerImplPort">
+<soap:address location="http://localhost:8080/UmorTrackerSOAPServiceMaven/umor"/>
+</wsdl:port>
+</wsdl:service>
 </wsdl:definitions>

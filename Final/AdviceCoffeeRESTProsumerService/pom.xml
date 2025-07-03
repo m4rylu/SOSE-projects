@@ -75,7 +75,9 @@
 								<wsdlOption>
 									<wsdl>${basedir}/src/main/resources/SleepSOAP.wsdl</wsdl>
 									<extraargs>
-              						 <extraarg>-asyncMethods</extraarg>
+              						  <extraarg>-wsdlLocation</extraarg>
+              						  <extraarg>/SleepSOAP.wsdl</extraarg>
+              						  <extraarg>-asyncMethods</extraarg>
             						</extraargs>
 								</wsdlOption>								
 							</wsdlOptions>

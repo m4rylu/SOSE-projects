@@ -6,8 +6,9 @@ import it.sose.soap.sleep.SleepTrackerPortService;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.core.Response;
-import it.sose.soap.sleep.Last7DaysValuesRequest;
-import it.sose.soap.sleep.Last7DaysValuesResponse;
+import jakarta.xml.ws.BindingProvider;
+import it.sose.soap.sleep.LastValuesRequest;
+import it.sose.soap.sleep.LastValuesResponse;
 
 
 //ho utilizzato l'approccio della callback per prestazioni migliori anche se piu omplicato da gestire.
@@ -28,15 +29,21 @@ public class AdviceCoffeeImpl implements AdviceCoffee{
 		Client client = ClientBuilder.newClient();
 		Callback coffeeHandler = new Callback();
 		
-		Future<Response> futureCoffeeResponse = client.target("http://localhost:8080/CoffeeTrackerRESTServiceMaven/coffee/lastValues").request().async().get(coffeeHandler);
+		Future<Response> futureCoffeeResponse = client.target("http://coffee-service:8080/CoffeeTrackerRESTServiceMaven/coffee/lastValues").request().async().get(coffeeHandler);
 		
 		// asyncronous client for sleep service SOAP
 		SleepTrackerPortService service = new SleepTrackerPortService();
 		SleepTrackerPort endpoint = service.getSleepTrackerPortSoap11();
-		Last7DaysValuesRequest request = new Last7DaysValuesRequest();
+		
+        ((BindingProvider) endpoint).getRequestContext().put(
+                BindingProvider.ENDPOINT_ADDRESS_PROPERTY,
+                "http://sleep-service:8082/services/sleepTracker"
+            );
+		
+		LastValuesRequest request = new LastValuesRequest();
 		SOAPAsynchHandler sleepHandler = new SOAPAsynchHandler();
 		
-		Future<?> futureSleepResponse = endpoint.last7DaysValuesAsync(request, sleepHandler);
+		Future<?> futureSleepResponse = endpoint.lastValuesAsync(request, sleepHandler);
 
 		while(!futureCoffeeResponse.isDone() || !futureSleepResponse.isDone()) {
 			//The prosumer wait for both the result syncronizing the 2 processes
