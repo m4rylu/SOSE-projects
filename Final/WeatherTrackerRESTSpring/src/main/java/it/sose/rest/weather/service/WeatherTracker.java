@@ -1,7 +1,7 @@
 package it.sose.rest.weather.service;
 
-public interface WeatherTracker {
+public interface WeatherTracker{
 	String printWeatherTracker();
 	String addWeatherTracker(int a);
-	int[] last7DaysValues ();
+	String last7DaysValues ();
 }

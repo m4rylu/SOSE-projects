@@ -9,7 +9,7 @@ public interface AdviceCoffee {
 	@GET
 	@Path("/advice")
 	@Produces(MediaType.TEXT_PLAIN)
-	String getAdviceCoffee ();
+	String getAdviceCoffee();
 	
 	
 	

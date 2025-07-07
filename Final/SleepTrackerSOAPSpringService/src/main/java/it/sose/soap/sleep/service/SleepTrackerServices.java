@@ -1,14 +1,31 @@
 package it.sose.soap.sleep.service;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Arrays;
 
 import org.springframework.stereotype.Service;
 
 @Service
-public class SleepTrackerServices {
+public class SleepTrackerServices implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+	private int[][] sleepMatrix = new int[12][31];
+	private static final String FILE_PATH = "data/sleep_tracker.ser";
+	
+	public SleepTrackerServices() {
+        // Prova a caricare i dati salvati
+        SleepTrackerServices saved = deserialize();
+        if (saved != null) {
+            this.sleepMatrix = saved.sleepMatrix;
+        }
+    }
 		
-	private final int[][] sleepMatrix = new int[12][32];
 
 	public String printSleepTracker() {
 		StringBuilder sb = new StringBuilder();
@@ -45,6 +62,7 @@ public class SleepTrackerServices {
 		int day = today.getDayOfMonth() - 1;
 			
 		sleepMatrix[month][day] = mood;
+		serialize();
 
 		return "Value updated for day:"+today.toString();
 	}
@@ -58,8 +76,8 @@ public class SleepTrackerServices {
 		
 		for(int i=1; i<8; i++) {
 			LocalDate date = today.minusDays(i);
-			int new_month = date.getMonthValue();
-			int new_day = date.getDayOfMonth();
+			int new_month = date.getMonthValue() - 1;
+			int new_day = date.getDayOfMonth() - 1;
 			
 			int val = sleepMatrix[new_month][new_day];
 			lastValues[i] = val;
@@ -67,6 +85,22 @@ public class SleepTrackerServices {
 		
 		return Arrays.toString(lastValues);
 	}
+	
+	private void serialize() {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FILE_PATH))) {
+            oos.writeObject(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private SleepTrackerServices deserialize() {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_PATH))) {
+            return (SleepTrackerServices) ois.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            return null; // primo avvio
+        }
+    }
 	
 
 	

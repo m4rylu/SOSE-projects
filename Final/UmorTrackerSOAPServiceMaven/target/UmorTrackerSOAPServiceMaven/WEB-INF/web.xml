@@ -17,7 +17,7 @@
 		</init-param>
 		<init-param>
 			<param-name>jaxrs.address</param-name>
-			<param-value>/soap</param-value>
+			<param-value>/humor</param-value>
 		</init-param>
 	</servlet>
 	

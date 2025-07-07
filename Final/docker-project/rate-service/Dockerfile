@@ -12,3 +12,4 @@ RUN rm -rf /usr/local/tomcat/webapps/*
 
 # Copia il .war nella cartella webapps
 COPY target/RateMyDayTrackerRESTServiceMaven.war /usr/local/tomcat/webapps/RateMyDayTrackerRESTServiceMaven.war
+COPY data /usr/local/tomcat/webapps/data

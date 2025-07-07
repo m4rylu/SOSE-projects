@@ -11,6 +11,7 @@ import it.sose.soap.umor.LastValuesResponse;
 
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
+import jakarta.xml.ws.BindingProvider;
 
 
 
@@ -29,11 +30,18 @@ public class AdviceMoodImpl implements AdviceMood{
 
 		//client rest part
 		Client client = ClientBuilder.newClient();
-		Future<jakarta.ws.rs.core.Response> rateMyDayResponse = client.target("http://localhost:8084/RateMyDayTrackerRESTServiceMaven/rate/lastValues").request().async().get();
+		Future<jakarta.ws.rs.core.Response> rateMyDayResponse = client.target("http://rate-service:8084/RateMyDayTrackerRESTServiceMaven/rate/lastValues").request().async().get();
 		
 		//client soap
 		UmorTrackerImplService service = new UmorTrackerImplService();
 		UmorTracker endpoint = service.getUmorTrackerImplPort();
+		
+        ((BindingProvider) endpoint).getRequestContext().put(
+                BindingProvider.ENDPOINT_ADDRESS_PROPERTY,
+                "http://humor-service:8085/UmorTrackerSOAPServiceMaven/umor"
+            );
+		
+		
 		LastValues request = new LastValues();
 		jakarta.xml.ws.Response<LastValuesResponse> umorResponse = endpoint.lastValuesAsync(request);
 		

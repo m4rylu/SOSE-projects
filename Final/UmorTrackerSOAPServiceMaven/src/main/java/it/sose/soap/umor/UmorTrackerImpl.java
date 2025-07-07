@@ -1,11 +1,27 @@
 package it.sose.soap.umor;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Arrays;
 
-public class UmorTrackerImpl implements UmorTracker {
+public class UmorTrackerImpl implements UmorTracker, Serializable {
 	
-	private final int[][] umorMatrix = new int[12][32];
+	private static final long serialVersionUID = 1L;
+	private int[][] umorMatrix = new int[12][31];
+	private static final String FILE_PATH = "/usr/local/tomcat/webapps/data/umor_tracker.ser";
+	
+	public UmorTrackerImpl() {
+        // Prova a caricare i dati salvati
+        UmorTrackerImpl saved = deserialize();
+        if (saved != null) {
+            this.umorMatrix = saved.umorMatrix;
+        }
+    }
 
 	@Override
 	public String printUmorTracker() {
@@ -44,6 +60,7 @@ public class UmorTrackerImpl implements UmorTracker {
 		int day = today.getDayOfMonth() - 1;
 			
 		umorMatrix[month][day] = mood;
+		serialize();
 
 		return "Value updated for day:"+today.toString();
 	}
@@ -57,8 +74,8 @@ public class UmorTrackerImpl implements UmorTracker {
 		
 		for(int i=1; i<8; i++) {
 			LocalDate date = today.minusDays(i);
-			int new_month = date.getMonthValue();
-			int new_day = date.getDayOfMonth();
+			int new_month = date.getMonthValue() - 1;
+			int new_day = date.getDayOfMonth() - 1;
 			
 			int val = umorMatrix[new_month][new_day];
 			lastValues[i] = val;
@@ -67,5 +84,23 @@ public class UmorTrackerImpl implements UmorTracker {
 		return Arrays.toString(lastValues);
 	}
 	
+	private void serialize() {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FILE_PATH))) {
+            oos.writeObject(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private UmorTrackerImpl deserialize() {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_PATH))) {
+            return (UmorTrackerImpl) ois.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            return null; // primo avvio
+        }
+    }
+	
 
 }
+
+

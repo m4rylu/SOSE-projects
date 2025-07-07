@@ -9,3 +9,4 @@ RUN rm -rf /usr/local/tomcat/webapps/*
 
 # Copia il .war nella cartella webapps
 COPY target/CoffeeTrackerRESTServiceMaven.war /usr/local/tomcat/webapps/CoffeeTrackerRESTServiceMaven.war
+COPY data /usr/local/tomcat/webapps/data

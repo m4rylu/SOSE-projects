@@ -14,26 +14,19 @@ spring:
               filters:
               - RewritePath=/api/coffee/(?<segment>.*), /CoffeeTrackerRESTServiceMaven/coffee/${segment}
 
-            - id: sleep
-              uri: http://sleep-service:8082
-              predicates:
-              - Path=/api/sleep/**
-              filters:
-              - RewritePath=/api/sleep/(?<segment>.*), /
-
             - id: rate
               uri: http://rate-service:8084
               predicates:
               - Path=/api/rate/**
               filters:
               - RewritePath=/api/rate/(?<segment>.*), /RateMyDayTrackerRESTServiceMaven/rate/${segment}
-              
-            - id: humor-adapter
-              uri: http://humor-adapter:8088
+
+            - id: weather
+              uri: http://weather-service:8086
               predicates:
-              - Path=/api/humor/**
+              - Path=/api/weather/**
               filters:
-              - RewritePath=/api/humor/(?<segment>.*), /api/adapter/humor/${segment}
+              - RewritePath=/api/weather/(?<segment>.*), /WeatherTrackerRESTSpring/${segment}
 
             - id: advice-coffee
               uri: http://advice-coffee-service:8081
@@ -41,3 +34,24 @@ spring:
               - Path=/api/advice/coffee/**
               filters:
               - RewritePath=/api/advice/coffee/(?<segment>.*), /AdviceCoffeeRESTProsumerService/coffeeAdvice/${segment}
+
+            - id: humor-adapter
+              uri: http://humor-adapter:8088
+              predicates:
+              - Path=/api/humor/**
+              filters:
+              - RewritePath=/api/humor/(?<segment>.*), /api/adapter/humor/${segment}
+             
+            - id: sleep-adapter
+              uri: http://sleep-adapter:8089
+              predicates:
+              - Path=/api/sleep/**
+              filters:
+              - RewritePath=/api/sleep/(?<segment>.*), /api/adapter/sleep/${segment}
+            
+            - id: advice-mood-adapter
+              uri: http://advice-mood-adapter:8090
+              predicates:
+              - Path=/api/advice/mood/**
+              filters:
+              - RewritePath=/api/advice/mood/(?<segment>.*), /api/adapter/advice/mood/${segment}

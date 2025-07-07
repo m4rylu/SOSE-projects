@@ -3,9 +3,10 @@ package it.sose.rest.weather.controller;
 import it.sose.rest.weather.service.WeatherTracker;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
 
 @RestController
 @RequestMapping("/WeatherTrackerRESTSpring")
@@ -24,13 +25,13 @@ public class WeatherControllerwithConstructorInjection {
         return weatherTracker.printWeatherTracker();
     }
     
-    @GetMapping("/add")
-    public String add(@RequestParam int a) {
+    @GetMapping("/add/{a}")
+    public String add(@PathVariable int a) {
         return weatherTracker.addWeatherTracker(a);
     }
     
     @GetMapping("/lastValues")
-    public int[] lastValues() {
+    public String lastValues() {
     	return weatherTracker.last7DaysValues();
     }
     

@@ -1,13 +1,31 @@
 package it.sose.rest.weather.service;
 
 import org.springframework.stereotype.Service;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Arrays;
 
 @Service
-public class WeatherTrackerImpl implements WeatherTracker {
-
-	private final int[][] weatherMatrix = new int[12][32];
-
+public class WeatherTrackerImpl implements WeatherTracker, Serializable{
+	
+	private static final long serialVersionUID = 1L;
+	private int[][] weatherMatrix = new int[12][31];
+	private static final String FILE_PATH = "data/weather_tracker.ser";
+	
+	public WeatherTrackerImpl() {
+        // Prova a caricare i dati salvati
+        WeatherTrackerImpl saved = deserialize();
+        if (saved != null) {
+            this.weatherMatrix = saved.weatherMatrix;
+        }
+    }
+	
 	@Override
 	public String printWeatherTracker() {
 		StringBuilder sb = new StringBuilder();
@@ -45,12 +63,13 @@ public class WeatherTrackerImpl implements WeatherTracker {
 		int day = today.getDayOfMonth() - 1;
 			
 		weatherMatrix[month][day] = mood;
+		serialize();
 
 		return "Value updated for day:"+today.toString();
 	}
 	
 	@Override
-	public int[] last7DaysValues() {
+	public String last7DaysValues() {
 		
 		int[] lastValues = new int[8];
 		
@@ -58,15 +77,30 @@ public class WeatherTrackerImpl implements WeatherTracker {
 		
 		for(int i=1; i<8; i++) {
 			LocalDate date = today.minusDays(i);
-			int new_month = date.getMonthValue();
-			int new_day = date.getDayOfMonth();
+			int new_month = date.getMonthValue() - 1;
+			int new_day = date.getDayOfMonth() - 1;
 			
 			int val = weatherMatrix[new_month][new_day];
 			lastValues[i] = val;
 		}
 		
-		return lastValues;
+		return Arrays.toString(lastValues);
 	}
 	
+	private void serialize() {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FILE_PATH))) {
+            oos.writeObject(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private WeatherTrackerImpl deserialize() {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_PATH))) {
+            return (WeatherTrackerImpl) ois.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            return null; // primo avvio
+        }
+    }
 	
 }

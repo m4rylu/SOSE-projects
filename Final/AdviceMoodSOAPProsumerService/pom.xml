@@ -82,6 +82,8 @@
 								<wsdlOption>
 									<wsdl>${basedir}/src/main/resources/UmorTracker.wsdl</wsdl>
 									<extraargs>
+									 <extraarg>-wsdlLocation</extraarg>
+              						 <extraarg>/UmorTracker.wsdl</extraarg>
               						 <extraarg>-asyncMethods</extraarg>
               						 <!-- stampa metodi per polling (?) -->
               						 <extraarg>-bareMethods</extraarg>
@@ -102,32 +104,4 @@
 		<finalName>AdviceMoodSOAPProsumerServiceMaven</finalName>
 	</build>
 	
-	<profiles>
-	
-		<!-- launch the command mvn clean verify -PdeployOnTomcatTest1 -->
-		<!-- or mvn -PdeployOnTomcatTest1 -->
-		<profile>
-			<id>deployOnTomcatTest1</id>
-			<activation>
-				<activeByDefault>false</activeByDefault>
-			</activation>
-
-			<build>
-				<!-- execute these goals for generating the war -->
-				<defaultGoal>clean verify</defaultGoal>
-
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-war-plugin</artifactId>
-						<version>3.4.0</version>
-						<configuration>
-							<outputDirectory>${project.basedir}/../../apache-tomcat-11.0.4/webapps</outputDirectory>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
-
 </project>
