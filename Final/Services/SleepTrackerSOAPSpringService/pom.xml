@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	 <!-- Inherits configuration and default dependencies from Spring Boot -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.5.3</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	
+	<!-- Project coordinates-->
+	<groupId>it.sose.soap.sleep</groupId>
+	<artifactId>SleepTrackerSOAPSpringService</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>SleepTrackerSOAPSpringService</name>
+	<description>Sleep Tracker Application using Spring Boot</description>
+	
+	<!-- Optional section for open source projects-->
+	<url/>
+	<licenses>
+		<license/>
+	</licenses>
+	<developers>
+		<developer/>
+	</developers>
+	<scm>
+		<connection/>
+		<developerConnection/>
+		<tag/>
+		<url/>
+	</scm>
+	
+	<properties>
+	<!-- Java version used for compiling the project -->
+		<java.version>21</java.version>
+	</properties>
+	
+	<dependencies>
+	<!-- Spring Boot Web: necessary for the creation of web services -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web-services</artifactId>
+		</dependency>
+
+  	<!-- Spring Boot Test: provides library for testing -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+	<!-- Provides WSDL4J library -->
+   		<dependency>
+    		<groupId>wsdl4j</groupId>
+    		<artifactId>wsdl4j</artifactId>
+		</dependency>
+
+		
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- Spring Boot Maven plugin: enables running and packaging Spring Boot apps  -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			
+			<!-- Plugin for the automatic generation of Java classes from an xsd file (XML schema)-->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxb2-maven-plugin</artifactId>
+				<version>3.3.0</version>
+				<executions>
+					<execution>
+						<id>xjc</id>
+						<goals>
+							<goal>xjc</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<sources>
+						<source>${project.basedir}/src/main/resources/sleepTracker.xsd</source>
+					</sources>
+				</configuration>
+			</plugin>
+			
+	  <!-- Maven Javadoc Plugin: Generates HTML documentation (JavaDoc) from the source code and inline comments. -->
+		  <plugin>
+      		<groupId>org.apache.maven.plugins</groupId>
+      		<artifactId>maven-javadoc-plugin</artifactId>
+     		<executions>
+        		<execution>
+          			<id>generate-javadocs</id>
+          			<goals>
+            			<goal>javadoc</goal>
+          			</goals>
+        		</execution>
+      		</executions>
+   		</plugin>
+		</plugins>
+	</build>
+
+</project>

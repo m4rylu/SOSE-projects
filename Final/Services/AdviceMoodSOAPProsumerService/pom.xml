@@ -1,0 +1,121 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <!-- Project coordinates-->
+  <groupId>it.sose.advice.mood</groupId>
+  <artifactId>AdviceMoodSOAPProsumerService</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  
+  <properties>
+  	  <!-- Character encoding for source files -->
+  	  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  	  <!-- Apache CXF version used for SOAP/JAX-WS support -->
+  	  <cxf.version>4.1.1</cxf.version>
+  	  <!-- Java version compatibility for compilation -->
+  	  <maven.compiler.source>21</maven.compiler.source>
+  	  <maven.compiler.target>21</maven.compiler.target>
+  	  <!-- Jakarta Servlet API version used -->
+  	  <jakarta.servlet.version>6.1.0</jakarta.servlet.version>
+  </properties>
+  
+  <dependencies>
+  <!-- CXF Frontend for JAX-WS: allows you to create SOAP services with annotations -->
+  	  <dependency>
+    	<groupId>org.apache.cxf</groupId>
+        <artifactId>cxf-rt-frontend-jaxws</artifactId>
+        <version>${cxf.version}</version>
+      </dependency>
+   
+  <!-- CXF HTTP Transport: required to expose web services over HTTP -->
+      <dependency>
+    	<groupId>org.apache.cxf</groupId>
+        <artifactId>cxf-rt-transports-http</artifactId>
+        <version>${cxf.version}</version>
+	  </dependency>
+	  
+  <!-- Jakarta Servlet API: required for web applications -->
+	  <dependency>
+        <groupId>jakarta.servlet</groupId>
+        <artifactId>jakarta.servlet-api</artifactId>
+        <version>${jakarta.servlet.version}</version>
+        <scope>provided</scope>
+      </dependency>
+      
+  <!-- CXF runtime library for building RESTful clients using JAX-RS. -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-rs-client</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+		
+  </dependencies>
+  
+  <build>
+	  <plugins>
+ 		  <!-- Maven Compiler Plugin: compiles the Java source code with the specified version and encoding -->
+		  <plugin>
+			  <groupId>org.apache.maven.plugins</groupId>
+			  <artifactId>maven-compiler-plugin</artifactId>
+			  <version>3.14.0</version>
+			  <configuration>
+				  <source>${maven.compiler.source}</source>
+				  <target>${maven.compiler.target}</target>
+				  <encoding>${project.build.sourceEncoding}</encoding>
+			  </configuration>
+		  </plugin>
+		  
+		    <!-- CXF plugin used to automatically generate Java classes from a WSDL file.-->
+			<plugin>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-codegen-plugin</artifactId>
+				<version>${cxf.version}</version>
+				<executions>
+					<execution>
+						<id>generate-sources</id>
+						<phase>generate-sources</phase>
+						<configuration>
+							<sourceRoot>${project.build.directory}/generated-sources/cxf</sourceRoot>
+							<wsdlOptions>
+								<wsdlOption>
+									<wsdl>${basedir}/src/main/resources/UmorTracker.wsdl</wsdl>
+									<extraargs>
+									 <!-- use dynamic wsdl location not local-->
+									 <extraarg>-wsdlLocation</extraarg>
+              						 <extraarg>/UmorTracker.wsdl</extraarg>
+              						 <!-- create asynchronous version of methods-->
+              						 <extraarg>-asyncMethods</extraarg>
+              						 <!-- create polling methods -->
+              						 <extraarg>-bareMethods</extraarg>
+            						</extraargs>
+								</wsdlOption>								
+							</wsdlOptions>
+						</configuration>
+						<goals>
+							<goal>wsdl2java</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
+	  <!-- Maven Javadoc Plugin: Generates HTML documentation (JavaDoc) from the source code and inline comments. -->
+		  <plugin>
+      		<groupId>org.apache.maven.plugins</groupId>
+      		<artifactId>maven-javadoc-plugin</artifactId>
+      		<version>3.11.2</version>
+     		<executions>
+        		<execution>
+          			<id>generate-javadocs</id>
+          			<goals>
+            			<goal>javadoc</goal>
+          			</goals>
+        		</execution>
+      		</executions>
+   		</plugin>
+		</plugins>
+
+		<!-- Final name of the WAR file to be generated -->
+		<finalName>AdviceMoodSOAPProsumerServiceMaven</finalName>
+	</build>
+	
+</project>

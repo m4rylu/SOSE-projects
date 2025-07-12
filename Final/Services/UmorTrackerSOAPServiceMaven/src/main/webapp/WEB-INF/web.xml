@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="https://jakarta.ee/xml/ns/jakartaee"
+	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee 
+						https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+	id="WebApp_ID" version="6.0">
+	<display-name>HumorServiceMaven</display-name>
+	
+	<!-- Define a servlet for handling SOAP requests -->
+	<servlet>
+		<servlet-name>SimpleCXFNonSpringServlet</servlet-name>
+		
+		<!-- Java class implementing the CXF Servlet -->
+		<servlet-class>it.sose.soap.umor.SimpleCXFNonSpringServlet</servlet-class>
+		
+		<!-- Specify the JAX-RS service class to be used -->
+		<init-param>
+			<param-name>jaxrs.serviceClasses</param-name>
+			<param-value>
+				it.sose.soap.umor.UmorTrackerImpl,
+			</param-value>
+		</init-param>
+		
+		<!-- Set the base address path for the REST services -->
+		<init-param>
+			<param-name>jaxrs.address</param-name>
+			<param-value>/humor</param-value>
+		</init-param>
+	</servlet>
+	
+	<!-- Map the servlet to a URL pattern -->
+	<servlet-mapping>
+		<servlet-name>SimpleCXFNonSpringServlet</servlet-name>
+		<!-- Intercepts all incoming requests -->
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Define the welcome files (used when accessing root URL) -->
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

@@ -1,0 +1,163 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <!-- Project coordinates-->
+  <groupId>it.sose.data.analysis</groupId>
+  <artifactId>DataAnalysisRESTProsumerService</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <name>DataAnalysisRESTProsumerService</name>
+  <description>Application for service data analysis</description>
+
+<properties>
+  	  <!-- Character encoding for source files -->
+  	  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  	  <!-- Apache CXF version used for SOAP/JAX-WS support -->
+  	  <cxf.version>4.1.1</cxf.version>
+  	  <!-- Java version compatibility for compilation -->
+  	  <maven.compiler.source>21</maven.compiler.source>
+  	  <maven.compiler.target>21</maven.compiler.target>
+  	  <!-- Jakarta Servlet API version used -->
+  	  <jakarta.servlet.version>6.1.0</jakarta.servlet.version>
+  </properties>
+  
+  <dependencies>
+      <!-- CXF HTTP Transport: required to expose web services over HTTP -->
+      <dependency>
+    	<groupId>org.apache.cxf</groupId>
+        <artifactId>cxf-rt-transports-http</artifactId>
+        <version>${cxf.version}</version>
+	  </dependency>
+	  
+	  <!-- CXF RS Service Description: used for the automatic generation of WADL rapresentation of RESTful services -->
+	  <dependency>
+    	<groupId>org.apache.cxf</groupId>
+    	<artifactId>cxf-rt-rs-service-description</artifactId>
+    	<version>${cxf.version}</version>
+	  </dependency>
+	  
+	  <!-- Jakarta Servlet API: required for web applications -->
+	  <dependency>
+        <groupId>jakarta.servlet</groupId>
+        <artifactId>jakarta.servlet-api</artifactId>
+        <version>${jakarta.servlet.version}</version>
+        <scope>provided</scope>
+      </dependency>
+      
+      <!-- CXF library for building RESTful clients using JAX-RS. -->
+      <dependency>
+    	<groupId>org.apache.cxf</groupId>
+    	<artifactId>cxf-rt-rs-client</artifactId>
+    	<version>4.0.2</version>
+	  </dependency>
+	  
+	  <!-- CXF Frontend for JAX-RS: allows you to create REST services with annotations -->
+	  <dependency>
+		<groupId>org.apache.cxf</groupId>
+		<artifactId>cxf-rt-frontend-jaxws</artifactId>
+		<version>${cxf.version}</version>
+	  </dependency>
+	  
+	    <!-- Swagger core library for JAX-RS 2 integration -->
+		<dependency>
+  			<groupId>io.swagger.core.v3</groupId>
+  			<artifactId>swagger-jaxrs2-jakarta</artifactId>
+  			<version>2.2.34</version>
+		</dependency>
+
+  		<!-- Integration utilities for Swagger/OpenAPI -->
+		<dependency>
+  			<groupId>io.swagger.core.v3</groupId>
+  			<artifactId>swagger-integration-jakarta</artifactId>
+  			<version>2.2.34</version>
+		</dependency>
+		
+		<!-- Automatically expose REST API documentation in OpenAPI v3 format-->
+		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-rt-rs-service-description-openapi-v3</artifactId>
+  			<version>${cxf.version}</version>
+		</dependency>
+	
+		<!-- Required for Apache CXF to work properly with OpenAPI/Swagger integration -->
+		<dependency>
+  			<groupId>jakarta.xml.ws</groupId>
+  			<artifactId>jakarta.xml.ws-api</artifactId>
+  			<version>3.0.0</version> 
+		</dependency> 
+
+  </dependencies>
+  
+  <build>
+	  <plugins>
+	  	  <!-- Maven Compiler Plugin: compiles the Java source code with the specified version and encoding -->
+		  <plugin>
+			  <groupId>org.apache.maven.plugins</groupId>
+			  <artifactId>maven-compiler-plugin</artifactId>
+			  <version>3.13.0</version>
+			  <configuration>
+				  <source>${maven.compiler.source}</source>
+				  <target>${maven.compiler.target}</target>
+				  <encoding>${project.build.sourceEncoding}</encoding>
+			  </configuration>
+		  </plugin>
+		  
+		  <!-- CXF plugin used to automatically generate Java classes from a WSDL file.-->
+		  <plugin>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-codegen-plugin</artifactId>
+				<version>${cxf.version}</version>
+				<executions>
+					<execution>
+						<id>generate-sources</id>
+						<phase>generate-sources</phase>
+						<configuration>
+							<sourceRoot>${project.build.directory}/generated-sources/cxf</sourceRoot>
+							<wsdlOptions>
+								<wsdlOption>
+									<wsdl>${basedir}/src/main/resources/SleepSOAP.wsdl</wsdl>
+									<extraargs>
+              						  <extraarg>-wsdlLocation</extraarg>
+              						  <extraarg>/SleepSOAP.wsdl</extraarg>
+              						  <extraarg>-asyncMethods</extraarg>
+            						</extraargs>
+								</wsdlOption>	
+								<wsdlOption>
+									<wsdl>${basedir}/src/main/resources/HumorSOAP.wsdl</wsdl>
+									<extraargs>
+									  <!-- use dynamic wsdl location not local-->
+              						  <extraarg>-wsdlLocation</extraarg>
+              						  <extraarg>/HumorSOAP.wsdl</extraarg>
+              						  <!-- create asynchronous version of methods-->
+              						  <extraarg>-asyncMethods</extraarg>
+            						</extraargs>
+								</wsdlOption>							
+							</wsdlOptions>
+						</configuration>
+						<goals>
+							<goal>wsdl2java</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
+	  <!-- Maven Javadoc Plugin: Generates HTML documentation (JavaDoc) from the source code and inline comments. -->
+		  <plugin>
+      		<groupId>org.apache.maven.plugins</groupId>
+      		<artifactId>maven-javadoc-plugin</artifactId>
+      		<version>3.11.2</version>
+     		<executions>
+        		<execution>
+          			<id>generate-javadocs</id>
+          			<goals>
+            			<goal>javadoc</goal>
+          			</goals>
+        		</execution>
+      		</executions>
+   		</plugin>
+	</plugins>
+	 	<!-- Final name of the WAR file to be generated -->
+		<finalName>DataAnalysisRESTProsumerService</finalName>
+	</build>
+	
+</project>

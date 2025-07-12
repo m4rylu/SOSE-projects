@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"it.sose.advice.coffee"},{"l":"it.sose.soap.sleep"}];updateSearchResults();

@@ -1,0 +1,97 @@
+services:
+  gateway:
+    build: ./gateway
+    container_name: gateway
+    ports:
+      - "8087:8087"
+    depends_on:
+      - coffee-service
+      - rate-service
+      - sleep-service
+      - humor-service
+      - weather-service
+      - advice-coffee-service
+      - advice-mood-service
+      - humor-adapter
+      - sleep-adapter
+      - advice-mood-adapter
+
+  coffee-service:
+    build: ./coffee-service
+    container_name: coffee-service
+    volumes:
+      - ./coffee-service/data:/usr/local/tomcat/webapps/data 
+    ports:
+      - "8080:8080"
+
+  sleep-service:
+    build: ./sleep-service
+    container_name: sleep-service
+    volumes:
+      - ./sleep-service/data:/data 
+    ports:
+    - "8082:8082"
+
+  rate-service:
+    build: ./rate-service
+    container_name: rate-service
+    volumes:
+      - ./rate-service/data:/usr/local/tomcat/webapps/data 
+    ports:
+      - "8084:8084"
+
+  humor-service:
+    build: ./humor-service
+    container_name: humor-service
+    volumes:
+      - ./humor-service/data:/usr/local/tomcat/webapps/data 
+    ports: 
+      - "8085:8085"
+
+  weather-service:
+    build: ./weather-service
+    container_name: weather-service
+    volumes:
+      - ./weather-service/data:/data 
+    ports:
+     - "8086:8086" 
+  
+  advice-coffee-service:
+    build: ./advice-coffee-service
+    container_name: advice-coffee-service
+    ports:
+    - "8081:8081"
+
+  advice-mood-service:
+    build: ./advice-mood-service
+    container_name: advice-mood-service
+    ports:
+    - "8083:8083"
+
+  humor-adapter:
+    build: ./humor-adapter
+    container_name: humor-adapter
+    ports:
+      - "8088:8088"
+
+  sleep-adapter:
+    build: ./sleep-adapter
+    container_name: sleep-adapter
+    ports:
+      - "8089:8089"
+
+  advice-mood-adapter:
+    build: ./advice-mood-adapter
+    container_name: advice-mood-adapter
+    ports:
+      - "8090:8090"
+
+  data-analysis-service:
+    build: ./data-analysis-service
+    container_name: data-analysis-service
+    volumes:
+      - ./data-analysis-service/data:/usr/local/tomcat/webapps/data 
+    ports:
+      - "8091:8091"
+
+      

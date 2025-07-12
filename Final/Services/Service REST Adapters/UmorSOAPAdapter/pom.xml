@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<!-- Inherits configuration and default dependencies from Spring Boot -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.5.3</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	
+	<!-- Project coordinates-->
+	<groupId>it.sose.soap.adapter</groupId>
+	<artifactId>UmorSOAPAdapter</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>UmorSOAPAdapter</name>
+	<description>REST adapter for Umor SOAP service</description>
+	
+	<!-- Optional section for open source projects-->
+	<url/>
+	<licenses>
+		<license/>
+	</licenses>
+	<developers>
+		<developer/>
+	</developers>
+	<scm>
+		<connection/>
+		<developerConnection/>
+		<tag/>
+		<url/>
+	</scm>
+	
+	<properties>
+	  	<!-- Java version used for compiling the project -->
+		<java.version>21</java.version>
+	</properties>
+	
+	<dependencies>
+  		<!-- Spring Boot Web: necessary for the creation of REST web services -->
+	    <dependency>
+        	<groupId>org.springframework.boot</groupId>
+        	<artifactId>spring-boot-starter-web</artifactId>
+    	</dependency>
+    	
+    	<!-- Spring Boot Web Services: necessary for the creation of SOAP web services -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web-services</artifactId>
+		</dependency>
+
+  		<!-- Spring Boot Test: provides library for testing -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+		<!-- CXF runtime per client SOAP -->
+		<dependency>
+    		<groupId>org.apache.cxf</groupId>
+    		<artifactId>cxf-rt-frontend-jaxws</artifactId>
+    		<version>4.1.1</version>
+		</dependency>
+
+  		<!-- CXF HTTP Transport: required to expose web services over HTTP -->
+		<dependency>
+    		<groupId>org.apache.cxf</groupId>
+    		<artifactId>cxf-rt-transports-http</artifactId>
+    		<version>4.1.1</version>
+		</dependency>
+		
+		<!-- Swagger/OpenAPI for documentation of REST services -->
+		<dependency>
+    		<groupId>org.springdoc</groupId>
+    		<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+    		<version>2.8.9</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+		<!-- Spring Boot Maven plugin: enables running and packaging Spring Boot apps  -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			
+		<!-- CXF plugin used to automatically generate Java classes from a WSDL file.-->
+		<plugin>
+      	  <groupId>org.apache.cxf</groupId>
+      		<artifactId>cxf-codegen-plugin</artifactId>
+      		  <version>4.1.1</version>
+      			<executions>
+        		  <execution>
+          			<id>generate-sources</id>
+          			<phase>generate-sources</phase>
+          			<configuration>
+            		  <wsdlOptions>
+              			<wsdlOption>
+                		  <wsdl>src/main/resources/humor.wsdl</wsdl>
+                		  <extraargs>
+                		  	<!-- use dynamic wsdl location not local-->
+              				<extraarg>-wsdlLocation</extraarg>
+              				<extraarg>/humor.wsdl</extraarg>
+            			  </extraargs>
+              			</wsdlOption>
+            		  </wsdlOptions>
+          			</configuration>
+          			<goals>
+            		  <goal>wsdl2java</goal>
+          			</goals>
+        		  </execution>
+      		  </executions>
+    		</plugin>
+		</plugins>
+	</build>
+
+</project>

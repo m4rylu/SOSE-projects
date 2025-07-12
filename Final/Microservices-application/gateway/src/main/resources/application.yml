@@ -1,0 +1,76 @@
+server:
+  port: 8087
+  
+spring:
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: coffee
+              uri: http://coffee-service:8080
+              predicates:
+              - Path=/api/coffee/**
+              filters:
+              - RewritePath=/api/coffee/wadl, /CoffeeTrackerRESTServiceMaven/coffee?_wadl
+              - RewritePath=/api/coffee/openapi, /CoffeeTrackerRESTServiceMaven/coffee/openapi.json
+              - RewritePath=/api/coffee/(?<segment>.*), /CoffeeTrackerRESTServiceMaven/coffee/${segment}
+
+            - id: rate
+              uri: http://rate-service:8084
+              predicates:
+              - Path=/api/rate/**
+              filters:
+              - RewritePath=/api/rate/wadl, /RateMyDayTrackerRESTServiceMaven/rate?_wadl
+              - RewritePath=/api/rate/openapi, /RateMyDayTrackerRESTServiceMaven/rate/openapi.json
+              - RewritePath=/api/rate/(?<segment>.*), /RateMyDayTrackerRESTServiceMaven/rate/${segment}
+
+            - id: weather
+              uri: http://weather-service:8086
+              predicates:
+              - Path=/api/weather/**
+              filters:
+              - RewritePath=/api/weather/openapi, /swagger-ui/index.html
+              - RewritePath=/api/weather/(?<segment>.*), /WeatherTrackerRESTSpring/${segment}
+
+            - id: advice-coffee
+              uri: http://advice-coffee-service:8081
+              predicates:
+              - Path=/api/advice/coffee/**
+              filters:
+              - RewritePath=/api/advice/coffee/wadl, /AdviceCoffeeRESTProsumerService/coffeeAdvice?_wadl
+              - RewritePath=/api/advice/coffee/openapi, /AdviceCoffeeRESTProsumerService/coffeeAdvice/openapi.json
+              - RewritePath=/api/advice/coffee/(?<segment>.*), /AdviceCoffeeRESTProsumerService/coffeeAdvice/${segment}
+
+            - id: humor-adapter
+              uri: http://humor-adapter:8088
+              predicates:
+              - Path=/api/humor/**
+              filters:
+              - RewritePath=/api/humor/openapi, /swagger-ui/index.html
+              - RewritePath=/api/humor/(?<segment>.*), /api/adapter/humor/${segment}
+             
+            - id: sleep-adapter
+              uri: http://sleep-adapter:8089
+              predicates:
+              - Path=/api/sleep/**
+              filters:
+              - RewritePath=/api/sleep/openapi, /swagger-ui/index.html
+              - RewritePath=/api/sleep/(?<segment>.*), /api/adapter/sleep/${segment}
+            
+            - id: advice-mood-adapter
+              uri: http://advice-mood-adapter:8090
+              predicates:
+              - Path=/api/advice/mood/**
+              filters:
+              - RewritePath=/api/advice/mood/openapi, /swagger-ui/index.html
+              - RewritePath=/api/advice/mood/(?<segment>.*), /api/adapter/advice/mood/${segment}
+
+            - id: data-analysis-service
+              uri: http://data-analysis-service:8091
+              predicates:
+              - Path=/api/data/analysis/**
+              filters:
+              - RewritePath=/api/data/analysis/wadl, /DataAnalysisRESTProsumerService/DataAnalysis?_wadl
+              - RewritePath=/api/data/analysis/openapi, /DataAnalysisRESTProsumerService/DataAnalysis/openapi.json
+              - RewritePath=/api/data/analysis/(?<segment>.*), /DataAnalysisRESTProsumerService/DataAnalysis/${segment}

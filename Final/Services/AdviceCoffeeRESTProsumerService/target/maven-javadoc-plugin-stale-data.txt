@@ -1,0 +1,112 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+-classpath
+'C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-frontend-jaxrs/4.1.1/cxf-rt-frontend-jaxrs-4.1.1.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-core/4.1.1/cxf-core-4.1.1.jar;C:/Users/marylu/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.5/jaxb-runtime-4.0.5.jar;C:/Users/marylu/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.5/jaxb-core-4.0.5.jar;C:/Users/marylu/.m2/repository/org/glassfish/jaxb/txw2/4.0.5/txw2-4.0.5.jar;C:/Users/marylu/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar;C:/Users/marylu/.m2/repository/com/fasterxml/woodstox/woodstox-core/7.1.0/woodstox-core-7.1.0.jar;C:/Users/marylu/.m2/repository/org/codehaus/woodstox/stax2-api/4.2.2/stax2-api-4.2.2.jar;C:/Users/marylu/.m2/repository/org/apache/ws/xmlschema/xmlschema-core/2.3.1/xmlschema-core-2.3.1.jar;C:/Users/marylu/.m2/repository/jakarta/ws/rs/jakarta.ws.rs-api/3.1.0/jakarta.ws.rs-api-3.1.0.jar;C:/Users/marylu/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-security/4.1.1/cxf-rt-security-4.1.1.jar;C:/Users/marylu/.m2/repository/org/eclipse/angus/angus-activation/2.0.2/angus-activation-2.0.2.jar;C:/Users/marylu/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-frontend-jaxws/4.1.1/cxf-rt-frontend-jaxws-4.1.1.jar;C:/Users/marylu/.m2/repository/xml-resolver/xml-resolver/1.2/xml-resolver-1.2.jar;C:/Users/marylu/.m2/repository/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-bindings-soap/4.1.1/cxf-rt-bindings-soap-4.1.1.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-wsdl/4.1.1/cxf-rt-wsdl-4.1.1.jar;C:/Users/marylu/.m2/repository/wsdl4j/wsdl4j/1.6.3/wsdl4j-1.6.3.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-databinding-jaxb/4.1.1/cxf-rt-databinding-jaxb-4.1.1.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-bindings-xml/4.1.1/cxf-rt-bindings-xml-4.1.1.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-frontend-simple/4.1.1/cxf-rt-frontend-simple-4.1.1.jar;C:/Users/marylu/.m2/repository/org/eclipse/angus/angus-mail/2.0.3/angus-mail-2.0.3.jar;C:/Users/marylu/.m2/repository/jakarta/mail/jakarta.mail-api/2.1.3/jakarta.mail-api-2.1.3.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-ws-addr/4.1.1/cxf-rt-ws-addr-4.1.1.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-ws-policy/4.1.1/cxf-rt-ws-policy-4.1.1.jar;C:/Users/marylu/.m2/repository/org/apache/neethi/neethi/3.2.1/neethi-3.2.1.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-transports-http/4.1.1/cxf-rt-transports-http-4.1.1.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-rs-service-description/4.1.1/cxf-rt-rs-service-description-4.1.1.jar;C:/Users/marylu/.m2/repository/jakarta/servlet/jakarta.servlet-api/6.1.0/jakarta.servlet-api-6.1.0.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-rs-client/4.1.1/cxf-rt-rs-client-4.1.1.jar;C:/Users/marylu/.m2/repository/jakarta/xml/ws/jakarta.xml.ws-api/3.0.0/jakarta.xml.ws-api-3.0.0.jar;C:/Users/marylu/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/3.0.0/jakarta.xml.bind-api-3.0.0.jar;C:/Users/marylu/.m2/repository/com/sun/activation/jakarta.activation/2.0.0/jakarta.activation-2.0.0.jar;C:/Users/marylu/.m2/repository/jakarta/xml/soap/jakarta.xml.soap-api/2.0.0/jakarta.xml.soap-api-2.0.0.jar;C:/Users/marylu/.m2/repository/jakarta/jws/jakarta.jws-api/3.0.0/jakarta.jws-api-3.0.0.jar;C:/Users/marylu/.m2/repository/io/swagger/core/v3/swagger-jaxrs2-jakarta/2.2.34/swagger-jaxrs2-jakarta-2.2.34.jar;C:/Users/marylu/.m2/repository/io/github/classgraph/classgraph/4.8.179/classgraph-4.8.179.jar;C:/Users/marylu/.m2/repository/org/javassist/javassist/3.30.2-GA/javassist-3.30.2-GA.jar;C:/Users/marylu/.m2/repository/io/swagger/core/v3/swagger-models-jakarta/2.2.34/swagger-models-jakarta-2.2.34.jar;C:/Users/marylu/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.18.2/jackson-annotations-2.18.2.jar;C:/Users/marylu/.m2/repository/io/swagger/core/v3/swagger-integration-jakarta/2.2.34/swagger-integration-jakarta-2.2.34.jar;C:/Users/marylu/.m2/repository/io/swagger/core/v3/swagger-core-jakarta/2.2.34/swagger-core-jakarta-2.2.34.jar;C:/Users/marylu/.m2/repository/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar;C:/Users/marylu/.m2/repository/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar;C:/Users/marylu/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar;C:/Users/marylu/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.18.2/jackson-dataformat-yaml-2.18.2.jar;C:/Users/marylu/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.18.2/jackson-datatype-jsr310-2.18.2.jar;C:/Users/marylu/.m2/repository/org/yaml/snakeyaml/2.3/snakeyaml-2.3.jar;C:/Users/marylu/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.18.2/jackson-databind-2.18.2.jar;C:/Users/marylu/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.18.2/jackson-core-2.18.2.jar;C:/Users/marylu/.m2/repository/com/fasterxml/jackson/jakarta/rs/jackson-jakarta-rs-json-provider/2.18.2/jackson-jakarta-rs-json-provider-2.18.2.jar;C:/Users/marylu/.m2/repository/com/fasterxml/jackson/jakarta/rs/jackson-jakarta-rs-base/2.18.2/jackson-jakarta-rs-base-2.18.2.jar;C:/Users/marylu/.m2/repository/com/fasterxml/jackson/module/jackson-module-jakarta-xmlbind-annotations/2.18.2/jackson-module-jakarta-xmlbind-annotations-2.18.2.jar;C:/Users/marylu/.m2/repository/io/swagger/core/v3/swagger-annotations-jakarta/2.2.34/swagger-annotations-jakarta-2.2.34.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-rs-service-description-openapi-v3/4.1.1/cxf-rt-rs-service-description-openapi-v3-4.1.1.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-rs-service-description-common-openapi/4.1.1/cxf-rt-rs-service-description-common-openapi-4.1.1.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-rs-service-description-swagger-ui/4.1.1/cxf-rt-rs-service-description-swagger-ui-4.1.1.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'21'
+-sourcepath
+'C:/Users/marylu/Desktop/univaq/SOSE/marylu-project/AdviceCoffeeRESTProsumerService/src/main/java;C:/Users/marylu/Desktop/univaq/SOSE/marylu-project/AdviceCoffeeRESTProsumerService/target/generated-sources/cxf;C:/Users/marylu/Desktop/univaq/SOSE/marylu-project/AdviceCoffeeRESTProsumerService/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2025. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/marylu/Desktop/univaq/SOSE/marylu-project/AdviceCoffeeRESTProsumerService/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'AdviceCoffeeRESTProsumerService 0.0.1-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'AdviceCoffeeRESTProsumerService 0.0.1-SNAPSHOT API'
+it.sose.advice.coffee
+it.sose.soap.sleep
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-frontend-jaxrs\4.1.1\cxf-rt-frontend-jaxrs-4.1.1.jar = 1746521800904
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-core\4.1.1\cxf-core-4.1.1.jar = 1746521803945
+C:\Users\marylu\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.5\jaxb-runtime-4.0.5.jar = 1746521802978
+C:\Users\marylu\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.5\jaxb-core-4.0.5.jar = 1746521800979
+C:\Users\marylu\.m2\repository\org\glassfish\jaxb\txw2\4.0.5\txw2-4.0.5.jar = 1746521801118
+C:\Users\marylu\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar = 1746521801416
+C:\Users\marylu\.m2\repository\com\fasterxml\woodstox\woodstox-core\7.1.0\woodstox-core-7.1.0.jar = 1746521803831
+C:\Users\marylu\.m2\repository\org\codehaus\woodstox\stax2-api\4.2.2\stax2-api-4.2.2.jar = 1746521805919
+C:\Users\marylu\.m2\repository\org\apache\ws\xmlschema\xmlschema-core\2.3.1\xmlschema-core-2.3.1.jar = 1746521801959
+C:\Users\marylu\.m2\repository\jakarta\ws\rs\jakarta.ws.rs-api\3.1.0\jakarta.ws.rs-api-3.1.0.jar = 1746521802182
+C:\Users\marylu\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar = 1746521802598
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-security\4.1.1\cxf-rt-security-4.1.1.jar = 1746521803541
+C:\Users\marylu\.m2\repository\org\eclipse\angus\angus-activation\2.0.2\angus-activation-2.0.2.jar = 1746521803367
+C:\Users\marylu\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.3\jakarta.activation-api-2.1.3.jar = 1746521804089
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-frontend-jaxws\4.1.1\cxf-rt-frontend-jaxws-4.1.1.jar = 1750242108333
+C:\Users\marylu\.m2\repository\xml-resolver\xml-resolver\1.2\xml-resolver-1.2.jar = 1750241603400
+C:\Users\marylu\.m2\repository\org\ow2\asm\asm\9.7.1\asm-9.7.1.jar = 1750242108561
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-bindings-soap\4.1.1\cxf-rt-bindings-soap-4.1.1.jar = 1750242108894
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-wsdl\4.1.1\cxf-rt-wsdl-4.1.1.jar = 1750242108890
+C:\Users\marylu\.m2\repository\wsdl4j\wsdl4j\1.6.3\wsdl4j-1.6.3.jar = 1750241604199
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-databinding-jaxb\4.1.1\cxf-rt-databinding-jaxb-4.1.1.jar = 1750242108777
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-bindings-xml\4.1.1\cxf-rt-bindings-xml-4.1.1.jar = 1750242109677
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-frontend-simple\4.1.1\cxf-rt-frontend-simple-4.1.1.jar = 1750242108951
+C:\Users\marylu\.m2\repository\org\eclipse\angus\angus-mail\2.0.3\angus-mail-2.0.3.jar = 1750242109148
+C:\Users\marylu\.m2\repository\jakarta\mail\jakarta.mail-api\2.1.3\jakarta.mail-api-2.1.3.jar = 1750242109243
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-ws-addr\4.1.1\cxf-rt-ws-addr-4.1.1.jar = 1750242109124
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-ws-policy\4.1.1\cxf-rt-ws-policy-4.1.1.jar = 1750242109327
+C:\Users\marylu\.m2\repository\org\apache\neethi\neethi\3.2.1\neethi-3.2.1.jar = 1750242109325
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-transports-http\4.1.1\cxf-rt-transports-http-4.1.1.jar = 1746521804227
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-rs-service-description\4.1.1\cxf-rt-rs-service-description-4.1.1.jar = 1746521803905
+C:\Users\marylu\.m2\repository\jakarta\servlet\jakarta.servlet-api\6.1.0\jakarta.servlet-api-6.1.0.jar = 1746521804156
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-rs-client\4.1.1\cxf-rt-rs-client-4.1.1.jar = 1746640927959
+C:\Users\marylu\.m2\repository\jakarta\xml\ws\jakarta.xml.ws-api\3.0.0\jakarta.xml.ws-api-3.0.0.jar = 1752229143970
+C:\Users\marylu\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\3.0.0\jakarta.xml.bind-api-3.0.0.jar = 1752229144115
+C:\Users\marylu\.m2\repository\com\sun\activation\jakarta.activation\2.0.0\jakarta.activation-2.0.0.jar = 1752229144192
+C:\Users\marylu\.m2\repository\jakarta\xml\soap\jakarta.xml.soap-api\2.0.0\jakarta.xml.soap-api-2.0.0.jar = 1752229144763
+C:\Users\marylu\.m2\repository\jakarta\jws\jakarta.jws-api\3.0.0\jakarta.jws-api-3.0.0.jar = 1750256466005
+C:\Users\marylu\.m2\repository\io\swagger\core\v3\swagger-jaxrs2-jakarta\2.2.34\swagger-jaxrs2-jakarta-2.2.34.jar = 1752228960528
+C:\Users\marylu\.m2\repository\io\github\classgraph\classgraph\4.8.179\classgraph-4.8.179.jar = 1752223462203
+C:\Users\marylu\.m2\repository\org\javassist\javassist\3.30.2-GA\javassist-3.30.2-GA.jar = 1752223462095
+C:\Users\marylu\.m2\repository\io\swagger\core\v3\swagger-models-jakarta\2.2.34\swagger-models-jakarta-2.2.34.jar = 1752228961050
+C:\Users\marylu\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.18.2\jackson-annotations-2.18.2.jar = 1752223461278
+C:\Users\marylu\.m2\repository\io\swagger\core\v3\swagger-integration-jakarta\2.2.34\swagger-integration-jakarta-2.2.34.jar = 1752228961671
+C:\Users\marylu\.m2\repository\io\swagger\core\v3\swagger-core-jakarta\2.2.34\swagger-core-jakarta-2.2.34.jar = 1752228961101
+C:\Users\marylu\.m2\repository\org\apache\commons\commons-lang3\3.17.0\commons-lang3-3.17.0.jar = 1746522470177
+C:\Users\marylu\.m2\repository\org\slf4j\slf4j-api\2.0.9\slf4j-api-2.0.9.jar = 1752223462377
+C:\Users\marylu\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar = 1750323199506
+C:\Users\marylu\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.18.2\jackson-dataformat-yaml-2.18.2.jar = 1752223462467
+C:\Users\marylu\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.18.2\jackson-datatype-jsr310-2.18.2.jar = 1752223462537
+C:\Users\marylu\.m2\repository\org\yaml\snakeyaml\2.3\snakeyaml-2.3.jar = 1750315100333
+C:\Users\marylu\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.18.2\jackson-databind-2.18.2.jar = 1752223461650
+C:\Users\marylu\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.18.2\jackson-core-2.18.2.jar = 1752223461817
+C:\Users\marylu\.m2\repository\com\fasterxml\jackson\jakarta\rs\jackson-jakarta-rs-json-provider\2.18.2\jackson-jakarta-rs-json-provider-2.18.2.jar = 1752227040479
+C:\Users\marylu\.m2\repository\com\fasterxml\jackson\jakarta\rs\jackson-jakarta-rs-base\2.18.2\jackson-jakarta-rs-base-2.18.2.jar = 1752227040873
+C:\Users\marylu\.m2\repository\com\fasterxml\jackson\module\jackson-module-jakarta-xmlbind-annotations\2.18.2\jackson-module-jakarta-xmlbind-annotations-2.18.2.jar = 1752227040991
+C:\Users\marylu\.m2\repository\io\swagger\core\v3\swagger-annotations-jakarta\2.2.34\swagger-annotations-jakarta-2.2.34.jar = 1752228962102
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-rs-service-description-openapi-v3\4.1.1\cxf-rt-rs-service-description-openapi-v3-4.1.1.jar = 1752227039421
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-rs-service-description-common-openapi\4.1.1\cxf-rt-rs-service-description-common-openapi-4.1.1.jar = 1752227040014
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-rs-service-description-swagger-ui\4.1.1\cxf-rt-rs-service-description-swagger-ui-4.1.1.jar = 1752227040231
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\AdviceCoffeeRESTProsumerService\src\main\java = 1750504906883
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\AdviceCoffeeRESTProsumerService\target\generated-sources\cxf = 1752312663495
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\AdviceCoffeeRESTProsumerService\target\generated-sources\annotations = 1752312664054
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\AdviceCoffeeRESTProsumerService\target\reports\apidocs\allclasses-index.html = 1752312670495
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\AdviceCoffeeRESTProsumerService\target\reports\apidocs\allpackages-index.html = 1752312670501
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\AdviceCoffeeRESTProsumerService\target\reports\apidocs\copy.svg = 1752312670582
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\AdviceCoffeeRESTProsumerService\target\reports\apidocs\element-list = 1752312670222
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\AdviceCoffeeRESTProsumerService\target\reports\apidocs\help-doc.html = 1752312670566
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\AdviceCoffeeRESTProsumerService\target\reports\apidocs\index-all.html = 1752312670550
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\AdviceCoffeeRESTProsumerService\target\reports\apidocs\index.html = 1752312670468
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\AdviceCoffeeRESTProsumerService\target\reports\apidocs\link.svg = 1752312670585
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\AdviceCoffeeRESTProsumerService\target\reports\apidocs\member-search-index.js = 1752312670510
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\AdviceCoffeeRESTProsumerService\target\reports\apidocs\module-search-index.js = 1752312670503
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\AdviceCoffeeRESTProsumerService\target\reports\apidocs\overview-summary.html = 1752312670559
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\AdviceCoffeeRESTProsumerService\target\reports\apidocs\overview-tree.html = 1752312670448
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\AdviceCoffeeRESTProsumerService\target\reports\apidocs\package-search-index.js = 1752312670506
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\AdviceCoffeeRESTProsumerService\target\reports\apidocs\script.js = 1752312670579
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\AdviceCoffeeRESTProsumerService\target\reports\apidocs\search-page.js = 1752312670602
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\AdviceCoffeeRESTProsumerService\target\reports\apidocs\search.html = 1752312670556
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\AdviceCoffeeRESTProsumerService\target\reports\apidocs\search.js = 1752312670595
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\AdviceCoffeeRESTProsumerService\target\reports\apidocs\stylesheet.css = 1752312670576
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\AdviceCoffeeRESTProsumerService\target\reports\apidocs\tag-search-index.js = 1752312670512
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\AdviceCoffeeRESTProsumerService\target\reports\apidocs\type-search-index.js = 1752312670507
