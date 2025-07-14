@@ -1,0 +1,81 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+-classpath
+'C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-frontend-jaxws/4.1.1/cxf-rt-frontend-jaxws-4.1.1.jar;C:/Users/marylu/.m2/repository/xml-resolver/xml-resolver/1.2/xml-resolver-1.2.jar;C:/Users/marylu/.m2/repository/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-core/4.1.1/cxf-core-4.1.1.jar;C:/Users/marylu/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar;C:/Users/marylu/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.5/jaxb-runtime-4.0.5.jar;C:/Users/marylu/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.5/jaxb-core-4.0.5.jar;C:/Users/marylu/.m2/repository/org/glassfish/jaxb/txw2/4.0.5/txw2-4.0.5.jar;C:/Users/marylu/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar;C:/Users/marylu/.m2/repository/com/fasterxml/woodstox/woodstox-core/7.1.0/woodstox-core-7.1.0.jar;C:/Users/marylu/.m2/repository/org/codehaus/woodstox/stax2-api/4.2.2/stax2-api-4.2.2.jar;C:/Users/marylu/.m2/repository/org/apache/ws/xmlschema/xmlschema-core/2.3.1/xmlschema-core-2.3.1.jar;C:/Users/marylu/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-bindings-soap/4.1.1/cxf-rt-bindings-soap-4.1.1.jar;C:/Users/marylu/.m2/repository/jakarta/xml/soap/jakarta.xml.soap-api/3.0.2/jakarta.xml.soap-api-3.0.2.jar;C:/Users/marylu/.m2/repository/jakarta/xml/ws/jakarta.xml.ws-api/4.0.2/jakarta.xml.ws-api-4.0.2.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-wsdl/4.1.1/cxf-rt-wsdl-4.1.1.jar;C:/Users/marylu/.m2/repository/wsdl4j/wsdl4j/1.6.3/wsdl4j-1.6.3.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-databinding-jaxb/4.1.1/cxf-rt-databinding-jaxb-4.1.1.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-bindings-xml/4.1.1/cxf-rt-bindings-xml-4.1.1.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-frontend-simple/4.1.1/cxf-rt-frontend-simple-4.1.1.jar;C:/Users/marylu/.m2/repository/org/eclipse/angus/angus-mail/2.0.3/angus-mail-2.0.3.jar;C:/Users/marylu/.m2/repository/jakarta/mail/jakarta.mail-api/2.1.3/jakarta.mail-api-2.1.3.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-ws-addr/4.1.1/cxf-rt-ws-addr-4.1.1.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-ws-policy/4.1.1/cxf-rt-ws-policy-4.1.1.jar;C:/Users/marylu/.m2/repository/org/apache/neethi/neethi/3.2.1/neethi-3.2.1.jar;C:/Users/marylu/.m2/repository/org/eclipse/angus/angus-activation/2.0.2/angus-activation-2.0.2.jar;C:/Users/marylu/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-transports-http/4.1.1/cxf-rt-transports-http-4.1.1.jar;C:/Users/marylu/.m2/repository/jakarta/servlet/jakarta.servlet-api/6.1.0/jakarta.servlet-api-6.1.0.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'21'
+-sourcepath
+'C:/Users/marylu/Desktop/univaq/SOSE/marylu-project/UmorTrackerSOAPServiceMaven/src/main/java;C:/Users/marylu/Desktop/univaq/SOSE/marylu-project/UmorTrackerSOAPServiceMaven/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2025. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/marylu/Desktop/univaq/SOSE/marylu-project/UmorTrackerSOAPServiceMaven/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'UmorTracker 0.0.1-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'UmorTracker 0.0.1-SNAPSHOT API'
+it.sose.soap.umor
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-frontend-jaxws\4.1.1\cxf-rt-frontend-jaxws-4.1.1.jar = 1750242108333
+C:\Users\marylu\.m2\repository\xml-resolver\xml-resolver\1.2\xml-resolver-1.2.jar = 1750241603400
+C:\Users\marylu\.m2\repository\org\ow2\asm\asm\9.7.1\asm-9.7.1.jar = 1750242108561
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-core\4.1.1\cxf-core-4.1.1.jar = 1746521803945
+C:\Users\marylu\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar = 1746521802598
+C:\Users\marylu\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.5\jaxb-runtime-4.0.5.jar = 1746521802978
+C:\Users\marylu\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.5\jaxb-core-4.0.5.jar = 1746521800979
+C:\Users\marylu\.m2\repository\org\glassfish\jaxb\txw2\4.0.5\txw2-4.0.5.jar = 1746521801118
+C:\Users\marylu\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar = 1746521801416
+C:\Users\marylu\.m2\repository\com\fasterxml\woodstox\woodstox-core\7.1.0\woodstox-core-7.1.0.jar = 1746521803831
+C:\Users\marylu\.m2\repository\org\codehaus\woodstox\stax2-api\4.2.2\stax2-api-4.2.2.jar = 1746521805919
+C:\Users\marylu\.m2\repository\org\apache\ws\xmlschema\xmlschema-core\2.3.1\xmlschema-core-2.3.1.jar = 1746521801959
+C:\Users\marylu\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.2\jakarta.xml.bind-api-4.0.2.jar = 1746521802071
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-bindings-soap\4.1.1\cxf-rt-bindings-soap-4.1.1.jar = 1750242108894
+C:\Users\marylu\.m2\repository\jakarta\xml\soap\jakarta.xml.soap-api\3.0.2\jakarta.xml.soap-api-3.0.2.jar = 1750242109413
+C:\Users\marylu\.m2\repository\jakarta\xml\ws\jakarta.xml.ws-api\4.0.2\jakarta.xml.ws-api-4.0.2.jar = 1750242108760
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-wsdl\4.1.1\cxf-rt-wsdl-4.1.1.jar = 1750242108890
+C:\Users\marylu\.m2\repository\wsdl4j\wsdl4j\1.6.3\wsdl4j-1.6.3.jar = 1750241604199
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-databinding-jaxb\4.1.1\cxf-rt-databinding-jaxb-4.1.1.jar = 1750242108777
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-bindings-xml\4.1.1\cxf-rt-bindings-xml-4.1.1.jar = 1750242109677
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-frontend-simple\4.1.1\cxf-rt-frontend-simple-4.1.1.jar = 1750242108951
+C:\Users\marylu\.m2\repository\org\eclipse\angus\angus-mail\2.0.3\angus-mail-2.0.3.jar = 1750242109148
+C:\Users\marylu\.m2\repository\jakarta\mail\jakarta.mail-api\2.1.3\jakarta.mail-api-2.1.3.jar = 1750242109243
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-ws-addr\4.1.1\cxf-rt-ws-addr-4.1.1.jar = 1750242109124
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-ws-policy\4.1.1\cxf-rt-ws-policy-4.1.1.jar = 1750242109327
+C:\Users\marylu\.m2\repository\org\apache\neethi\neethi\3.2.1\neethi-3.2.1.jar = 1750242109325
+C:\Users\marylu\.m2\repository\org\eclipse\angus\angus-activation\2.0.2\angus-activation-2.0.2.jar = 1746521803367
+C:\Users\marylu\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.3\jakarta.activation-api-2.1.3.jar = 1746521804089
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-transports-http\4.1.1\cxf-rt-transports-http-4.1.1.jar = 1746521804227
+C:\Users\marylu\.m2\repository\jakarta\servlet\jakarta.servlet-api\6.1.0\jakarta.servlet-api-6.1.0.jar = 1746521804156
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\UmorTrackerSOAPServiceMaven\src\main\java = 1750246559310
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\UmorTrackerSOAPServiceMaven\target\generated-sources\annotations = 1752527094626
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\UmorTrackerSOAPServiceMaven\target\reports\apidocs\allclasses-index.html = 1752527099053
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\UmorTrackerSOAPServiceMaven\target\reports\apidocs\allpackages-index.html = 1752527099057
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\UmorTrackerSOAPServiceMaven\target\reports\apidocs\copy.svg = 1752527099127
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\UmorTrackerSOAPServiceMaven\target\reports\apidocs\element-list = 1752527098909
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\UmorTrackerSOAPServiceMaven\target\reports\apidocs\help-doc.html = 1752527099099
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\UmorTrackerSOAPServiceMaven\target\reports\apidocs\index-all.html = 1752527099084
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\UmorTrackerSOAPServiceMaven\target\reports\apidocs\index.html = 1752527099092
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\UmorTrackerSOAPServiceMaven\target\reports\apidocs\link.svg = 1752527099130
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\UmorTrackerSOAPServiceMaven\target\reports\apidocs\member-search-index.js = 1752527099065
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\UmorTrackerSOAPServiceMaven\target\reports\apidocs\module-search-index.js = 1752527099060
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\UmorTrackerSOAPServiceMaven\target\reports\apidocs\overview-tree.html = 1752527099033
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\UmorTrackerSOAPServiceMaven\target\reports\apidocs\package-search-index.js = 1752527099062
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\UmorTrackerSOAPServiceMaven\target\reports\apidocs\script.js = 1752527099125
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\UmorTrackerSOAPServiceMaven\target\reports\apidocs\search-page.js = 1752527099137
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\UmorTrackerSOAPServiceMaven\target\reports\apidocs\search.html = 1752527099087
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\UmorTrackerSOAPServiceMaven\target\reports\apidocs\search.js = 1752527099134
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\UmorTrackerSOAPServiceMaven\target\reports\apidocs\serialized-form.html = 1752527098971
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\UmorTrackerSOAPServiceMaven\target\reports\apidocs\stylesheet.css = 1752527099104
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\UmorTrackerSOAPServiceMaven\target\reports\apidocs\tag-search-index.js = 1752527099069
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\UmorTrackerSOAPServiceMaven\target\reports\apidocs\type-search-index.js = 1752527099063

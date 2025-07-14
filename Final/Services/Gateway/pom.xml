@@ -2,17 +2,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	
+	<!-- Inherits configuration and default dependencies from Spring Boot -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.5.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+	
+	<!-- Project coordinates-->
 	<groupId>it.sose.application</groupId>
 	<artifactId>Gateway</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Gateway</name>
 	<description>Gateway of the service for Trackers Application</description>
+	
+	<!-- Optional section for open source projects-->
 	<url/>
 	<licenses>
 		<license/>
@@ -26,24 +32,35 @@
 		<tag/>
 		<url/>
 	</scm>
+	
+	
 	<properties>
+	  	<!-- Java version used for compiling the project -->
 		<java.version>21</java.version>
+		<!-- Spring Cloud version used to manage dependencies for Spring Cloud components -->
 		<spring-cloud.version>2025.0.0</spring-cloud.version>
 	</properties>
+	
+	
 	<dependencies>
+	
+		<!-- Spring Cloud Gateway with Netty to build API gateways -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-gateway-server-webmvc</artifactId>
+			<artifactId>spring-cloud-starter-gateway-server-webflux</artifactId>
 		</dependency>
 
+  		<!-- Spring Boot Test: provides library for testing -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	
 	<dependencyManagement>
 		<dependencies>
+		<!-- Import Spring Cloud dependencies POM to manage consistent versions across Spring Cloud projects -->
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
@@ -56,6 +73,7 @@
 
 	<build>
 		<plugins>
+		<!-- Spring Boot Maven plugin: enables running and packaging Spring Boot apps  -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>

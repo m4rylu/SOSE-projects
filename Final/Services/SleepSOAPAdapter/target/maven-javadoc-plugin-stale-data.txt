@@ -1,0 +1,140 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+-classpath
+'C:/Users/marylu/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.5.3/spring-boot-starter-web-3.5.3.jar;C:/Users/marylu/.m2/repository/org/springframework/boot/spring-boot-starter/3.5.3/spring-boot-starter-3.5.3.jar;C:/Users/marylu/.m2/repository/org/springframework/boot/spring-boot/3.5.3/spring-boot-3.5.3.jar;C:/Users/marylu/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.5.3/spring-boot-autoconfigure-3.5.3.jar;C:/Users/marylu/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.5.3/spring-boot-starter-logging-3.5.3.jar;C:/Users/marylu/.m2/repository/ch/qos/logback/logback-classic/1.5.18/logback-classic-1.5.18.jar;C:/Users/marylu/.m2/repository/ch/qos/logback/logback-core/1.5.18/logback-core-1.5.18.jar;C:/Users/marylu/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.24.3/log4j-to-slf4j-2.24.3.jar;C:/Users/marylu/.m2/repository/org/apache/logging/log4j/log4j-api/2.24.3/log4j-api-2.24.3.jar;C:/Users/marylu/.m2/repository/org/slf4j/jul-to-slf4j/2.0.17/jul-to-slf4j-2.0.17.jar;C:/Users/marylu/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar;C:/Users/marylu/.m2/repository/org/yaml/snakeyaml/2.4/snakeyaml-2.4.jar;C:/Users/marylu/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.5.3/spring-boot-starter-json-3.5.3.jar;C:/Users/marylu/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.19.1/jackson-databind-2.19.1.jar;C:/Users/marylu/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.19.1/jackson-annotations-2.19.1.jar;C:/Users/marylu/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.19.1/jackson-core-2.19.1.jar;C:/Users/marylu/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.19.1/jackson-datatype-jdk8-2.19.1.jar;C:/Users/marylu/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.19.1/jackson-datatype-jsr310-2.19.1.jar;C:/Users/marylu/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.19.1/jackson-module-parameter-names-2.19.1.jar;C:/Users/marylu/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.5.3/spring-boot-starter-tomcat-3.5.3.jar;C:/Users/marylu/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.42/tomcat-embed-core-10.1.42.jar;C:/Users/marylu/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.42/tomcat-embed-el-10.1.42.jar;C:/Users/marylu/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.42/tomcat-embed-websocket-10.1.42.jar;C:/Users/marylu/.m2/repository/org/springframework/spring-web/6.2.8/spring-web-6.2.8.jar;C:/Users/marylu/.m2/repository/org/springframework/spring-beans/6.2.8/spring-beans-6.2.8.jar;C:/Users/marylu/.m2/repository/io/micrometer/micrometer-observation/1.15.1/micrometer-observation-1.15.1.jar;C:/Users/marylu/.m2/repository/io/micrometer/micrometer-commons/1.15.1/micrometer-commons-1.15.1.jar;C:/Users/marylu/.m2/repository/org/springframework/spring-webmvc/6.2.8/spring-webmvc-6.2.8.jar;C:/Users/marylu/.m2/repository/org/springframework/spring-aop/6.2.8/spring-aop-6.2.8.jar;C:/Users/marylu/.m2/repository/org/springframework/spring-context/6.2.8/spring-context-6.2.8.jar;C:/Users/marylu/.m2/repository/org/springframework/spring-expression/6.2.8/spring-expression-6.2.8.jar;C:/Users/marylu/.m2/repository/org/springframework/boot/spring-boot-starter-web-services/3.5.3/spring-boot-starter-web-services-3.5.3.jar;C:/Users/marylu/.m2/repository/com/sun/xml/messaging/saaj/saaj-impl/3.0.4/saaj-impl-3.0.4.jar;C:/Users/marylu/.m2/repository/jakarta/xml/soap/jakarta.xml.soap-api/3.0.2/jakarta.xml.soap-api-3.0.2.jar;C:/Users/marylu/.m2/repository/org/jvnet/staxex/stax-ex/2.1.0/stax-ex-2.1.0.jar;C:/Users/marylu/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar;C:/Users/marylu/.m2/repository/jakarta/xml/ws/jakarta.xml.ws-api/4.0.2/jakarta.xml.ws-api-4.0.2.jar;C:/Users/marylu/.m2/repository/org/springframework/spring-oxm/6.2.8/spring-oxm-6.2.8.jar;C:/Users/marylu/.m2/repository/org/springframework/ws/spring-ws-core/4.1.0/spring-ws-core-4.1.0.jar;C:/Users/marylu/.m2/repository/org/springframework/ws/spring-xml/4.1.0/spring-xml-4.1.0.jar;C:/Users/marylu/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.5/jaxb-runtime-4.0.5.jar;C:/Users/marylu/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.5/jaxb-core-4.0.5.jar;C:/Users/marylu/.m2/repository/org/glassfish/jaxb/txw2/4.0.5/txw2-4.0.5.jar;C:/Users/marylu/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar;C:/Users/marylu/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar;C:/Users/marylu/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar;C:/Users/marylu/.m2/repository/org/springframework/spring-core/6.2.8/spring-core-6.2.8.jar;C:/Users/marylu/.m2/repository/org/springframework/spring-jcl/6.2.8/spring-jcl-6.2.8.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-frontend-jaxws/4.1.1/cxf-rt-frontend-jaxws-4.1.1.jar;C:/Users/marylu/.m2/repository/xml-resolver/xml-resolver/1.2/xml-resolver-1.2.jar;C:/Users/marylu/.m2/repository/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-core/4.1.1/cxf-core-4.1.1.jar;C:/Users/marylu/.m2/repository/com/fasterxml/woodstox/woodstox-core/7.1.0/woodstox-core-7.1.0.jar;C:/Users/marylu/.m2/repository/org/codehaus/woodstox/stax2-api/4.2.2/stax2-api-4.2.2.jar;C:/Users/marylu/.m2/repository/org/apache/ws/xmlschema/xmlschema-core/2.3.1/xmlschema-core-2.3.1.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-bindings-soap/4.1.1/cxf-rt-bindings-soap-4.1.1.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-wsdl/4.1.1/cxf-rt-wsdl-4.1.1.jar;C:/Users/marylu/.m2/repository/wsdl4j/wsdl4j/1.6.3/wsdl4j-1.6.3.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-databinding-jaxb/4.1.1/cxf-rt-databinding-jaxb-4.1.1.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-bindings-xml/4.1.1/cxf-rt-bindings-xml-4.1.1.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-frontend-simple/4.1.1/cxf-rt-frontend-simple-4.1.1.jar;C:/Users/marylu/.m2/repository/org/eclipse/angus/angus-mail/2.0.3/angus-mail-2.0.3.jar;C:/Users/marylu/.m2/repository/jakarta/mail/jakarta.mail-api/2.1.3/jakarta.mail-api-2.1.3.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-ws-addr/4.1.1/cxf-rt-ws-addr-4.1.1.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-ws-policy/4.1.1/cxf-rt-ws-policy-4.1.1.jar;C:/Users/marylu/.m2/repository/org/apache/neethi/neethi/3.2.1/neethi-3.2.1.jar;C:/Users/marylu/.m2/repository/org/eclipse/angus/angus-activation/2.0.2/angus-activation-2.0.2.jar;C:/Users/marylu/.m2/repository/org/apache/cxf/cxf-rt-transports-http/4.1.1/cxf-rt-transports-http-4.1.1.jar;C:/Users/marylu/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-ui/2.8.9/springdoc-openapi-starter-webmvc-ui-2.8.9.jar;C:/Users/marylu/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-api/2.8.9/springdoc-openapi-starter-webmvc-api-2.8.9.jar;C:/Users/marylu/.m2/repository/org/springdoc/springdoc-openapi-starter-common/2.8.9/springdoc-openapi-starter-common-2.8.9.jar;C:/Users/marylu/.m2/repository/org/springframework/boot/spring-boot-starter-validation/3.5.3/spring-boot-starter-validation-3.5.3.jar;C:/Users/marylu/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.2.Final/hibernate-validator-8.0.2.Final.jar;C:/Users/marylu/.m2/repository/org/jboss/logging/jboss-logging/3.6.1.Final/jboss-logging-3.6.1.Final.jar;C:/Users/marylu/.m2/repository/com/fasterxml/classmate/1.7.0/classmate-1.7.0.jar;C:/Users/marylu/.m2/repository/io/swagger/core/v3/swagger-core-jakarta/2.2.30/swagger-core-jakarta-2.2.30.jar;C:/Users/marylu/.m2/repository/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar;C:/Users/marylu/.m2/repository/io/swagger/core/v3/swagger-annotations-jakarta/2.2.30/swagger-annotations-jakarta-2.2.30.jar;C:/Users/marylu/.m2/repository/io/swagger/core/v3/swagger-models-jakarta/2.2.30/swagger-models-jakarta-2.2.30.jar;C:/Users/marylu/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar;C:/Users/marylu/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.19.1/jackson-dataformat-yaml-2.19.1.jar;C:/Users/marylu/.m2/repository/org/webjars/swagger-ui/5.21.0/swagger-ui-5.21.0.jar;C:/Users/marylu/.m2/repository/org/webjars/webjars-locator-lite/1.1.0/webjars-locator-lite-1.1.0.jar;C:/Users/marylu/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar'
+-encoding
+'UTF-8'
+-protected
+--release
+21
+-sourcepath
+'C:/Users/marylu/Desktop/univaq/SOSE/marylu-project/SleepSOAPAdapter/src/main/java;C:/Users/marylu/Desktop/univaq/SOSE/marylu-project/SleepSOAPAdapter/target/generated-sources/cxf;C:/Users/marylu/Desktop/univaq/SOSE/marylu-project/SleepSOAPAdapter/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2025. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/marylu/Desktop/univaq/SOSE/marylu-project/SleepSOAPAdapter/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'UmorSOAPAdapter 0.0.1-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'UmorSOAPAdapter 0.0.1-SNAPSHOT API'
+it.sose.soap.adapter.client
+it.sose.soap.adapter.controller
+it.sose.soap.adapter.service
+it.sose.soap.adapter
+it.sose.soap.sleep
+C:\Users\marylu\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.5.3\spring-boot-starter-web-3.5.3.jar = 1750485683447
+C:\Users\marylu\.m2\repository\org\springframework\boot\spring-boot-starter\3.5.3\spring-boot-starter-3.5.3.jar = 1750485683552
+C:\Users\marylu\.m2\repository\org\springframework\boot\spring-boot\3.5.3\spring-boot-3.5.3.jar = 1750485683842
+C:\Users\marylu\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.5.3\spring-boot-autoconfigure-3.5.3.jar = 1750485683744
+C:\Users\marylu\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.5.3\spring-boot-starter-logging-3.5.3.jar = 1750485683607
+C:\Users\marylu\.m2\repository\ch\qos\logback\logback-classic\1.5.18\logback-classic-1.5.18.jar = 1750315099876
+C:\Users\marylu\.m2\repository\ch\qos\logback\logback-core\1.5.18\logback-core-1.5.18.jar = 1750315101327
+C:\Users\marylu\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.24.3\log4j-to-slf4j-2.24.3.jar = 1750315099583
+C:\Users\marylu\.m2\repository\org\apache\logging\log4j\log4j-api\2.24.3\log4j-api-2.24.3.jar = 1750315100004
+C:\Users\marylu\.m2\repository\org\slf4j\jul-to-slf4j\2.0.17\jul-to-slf4j-2.0.17.jar = 1750315100557
+C:\Users\marylu\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar = 1746521802598
+C:\Users\marylu\.m2\repository\org\yaml\snakeyaml\2.4\snakeyaml-2.4.jar = 1750315575439
+C:\Users\marylu\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.5.3\spring-boot-starter-json-3.5.3.jar = 1750485683628
+C:\Users\marylu\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.19.1\jackson-databind-2.19.1.jar = 1750485683783
+C:\Users\marylu\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.19.1\jackson-annotations-2.19.1.jar = 1750485683733
+C:\Users\marylu\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.19.1\jackson-core-2.19.1.jar = 1750485683765
+C:\Users\marylu\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.19.1\jackson-datatype-jdk8-2.19.1.jar = 1750485684651
+C:\Users\marylu\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.19.1\jackson-datatype-jsr310-2.19.1.jar = 1750485683810
+C:\Users\marylu\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.19.1\jackson-module-parameter-names-2.19.1.jar = 1750485684186
+C:\Users\marylu\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.5.3\spring-boot-starter-tomcat-3.5.3.jar = 1750485683870
+C:\Users\marylu\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.42\tomcat-embed-core-10.1.42.jar = 1750485683992
+C:\Users\marylu\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.42\tomcat-embed-el-10.1.42.jar = 1750485683920
+C:\Users\marylu\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.42\tomcat-embed-websocket-10.1.42.jar = 1750485683951
+C:\Users\marylu\.m2\repository\org\springframework\spring-web\6.2.8\spring-web-6.2.8.jar = 1750485684035
+C:\Users\marylu\.m2\repository\org\springframework\spring-beans\6.2.8\spring-beans-6.2.8.jar = 1750485684047
+C:\Users\marylu\.m2\repository\io\micrometer\micrometer-observation\1.15.1\micrometer-observation-1.15.1.jar = 1750485684064
+C:\Users\marylu\.m2\repository\io\micrometer\micrometer-commons\1.15.1\micrometer-commons-1.15.1.jar = 1750485685067
+C:\Users\marylu\.m2\repository\org\springframework\spring-webmvc\6.2.8\spring-webmvc-6.2.8.jar = 1750485684141
+C:\Users\marylu\.m2\repository\org\springframework\spring-aop\6.2.8\spring-aop-6.2.8.jar = 1750485684148
+C:\Users\marylu\.m2\repository\org\springframework\spring-context\6.2.8\spring-context-6.2.8.jar = 1750485684252
+C:\Users\marylu\.m2\repository\org\springframework\spring-expression\6.2.8\spring-expression-6.2.8.jar = 1750485684227
+C:\Users\marylu\.m2\repository\org\springframework\boot\spring-boot-starter-web-services\3.5.3\spring-boot-starter-web-services-3.5.3.jar = 1750970581514
+C:\Users\marylu\.m2\repository\com\sun\xml\messaging\saaj\saaj-impl\3.0.4\saaj-impl-3.0.4.jar = 1750321714125
+C:\Users\marylu\.m2\repository\jakarta\xml\soap\jakarta.xml.soap-api\3.0.2\jakarta.xml.soap-api-3.0.2.jar = 1750242109413
+C:\Users\marylu\.m2\repository\org\jvnet\staxex\stax-ex\2.1.0\stax-ex-2.1.0.jar = 1750321713979
+C:\Users\marylu\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.3\jakarta.activation-api-2.1.3.jar = 1746521804089
+C:\Users\marylu\.m2\repository\jakarta\xml\ws\jakarta.xml.ws-api\4.0.2\jakarta.xml.ws-api-4.0.2.jar = 1750242108760
+C:\Users\marylu\.m2\repository\org\springframework\spring-oxm\6.2.8\spring-oxm-6.2.8.jar = 1750970581634
+C:\Users\marylu\.m2\repository\org\springframework\ws\spring-ws-core\4.1.0\spring-ws-core-4.1.0.jar = 1750321714033
+C:\Users\marylu\.m2\repository\org\springframework\ws\spring-xml\4.1.0\spring-xml-4.1.0.jar = 1750321713740
+C:\Users\marylu\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.5\jaxb-runtime-4.0.5.jar = 1746521802978
+C:\Users\marylu\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.5\jaxb-core-4.0.5.jar = 1746521800979
+C:\Users\marylu\.m2\repository\org\glassfish\jaxb\txw2\4.0.5\txw2-4.0.5.jar = 1746521801118
+C:\Users\marylu\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar = 1746521801416
+C:\Users\marylu\.m2\repository\org\slf4j\slf4j-api\2.0.17\slf4j-api-2.0.17.jar = 1750255037009
+C:\Users\marylu\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.2\jakarta.xml.bind-api-4.0.2.jar = 1746521802071
+C:\Users\marylu\.m2\repository\org\springframework\spring-core\6.2.8\spring-core-6.2.8.jar = 1750485684510
+C:\Users\marylu\.m2\repository\org\springframework\spring-jcl\6.2.8\spring-jcl-6.2.8.jar = 1750485684897
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-frontend-jaxws\4.1.1\cxf-rt-frontend-jaxws-4.1.1.jar = 1750242108333
+C:\Users\marylu\.m2\repository\xml-resolver\xml-resolver\1.2\xml-resolver-1.2.jar = 1750241603400
+C:\Users\marylu\.m2\repository\org\ow2\asm\asm\9.7.1\asm-9.7.1.jar = 1750242108561
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-core\4.1.1\cxf-core-4.1.1.jar = 1746521803945
+C:\Users\marylu\.m2\repository\com\fasterxml\woodstox\woodstox-core\7.1.0\woodstox-core-7.1.0.jar = 1746521803831
+C:\Users\marylu\.m2\repository\org\codehaus\woodstox\stax2-api\4.2.2\stax2-api-4.2.2.jar = 1746521805919
+C:\Users\marylu\.m2\repository\org\apache\ws\xmlschema\xmlschema-core\2.3.1\xmlschema-core-2.3.1.jar = 1746521801959
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-bindings-soap\4.1.1\cxf-rt-bindings-soap-4.1.1.jar = 1750242108894
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-wsdl\4.1.1\cxf-rt-wsdl-4.1.1.jar = 1750242108890
+C:\Users\marylu\.m2\repository\wsdl4j\wsdl4j\1.6.3\wsdl4j-1.6.3.jar = 1750241604199
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-databinding-jaxb\4.1.1\cxf-rt-databinding-jaxb-4.1.1.jar = 1750242108777
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-bindings-xml\4.1.1\cxf-rt-bindings-xml-4.1.1.jar = 1750242109677
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-frontend-simple\4.1.1\cxf-rt-frontend-simple-4.1.1.jar = 1750242108951
+C:\Users\marylu\.m2\repository\org\eclipse\angus\angus-mail\2.0.3\angus-mail-2.0.3.jar = 1750242109148
+C:\Users\marylu\.m2\repository\jakarta\mail\jakarta.mail-api\2.1.3\jakarta.mail-api-2.1.3.jar = 1750242109243
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-ws-addr\4.1.1\cxf-rt-ws-addr-4.1.1.jar = 1750242109124
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-ws-policy\4.1.1\cxf-rt-ws-policy-4.1.1.jar = 1750242109327
+C:\Users\marylu\.m2\repository\org\apache\neethi\neethi\3.2.1\neethi-3.2.1.jar = 1750242109325
+C:\Users\marylu\.m2\repository\org\eclipse\angus\angus-activation\2.0.2\angus-activation-2.0.2.jar = 1746521803367
+C:\Users\marylu\.m2\repository\org\apache\cxf\cxf-rt-transports-http\4.1.1\cxf-rt-transports-http-4.1.1.jar = 1746521804227
+C:\Users\marylu\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-ui\2.8.9\springdoc-openapi-starter-webmvc-ui-2.8.9.jar = 1752222553659
+C:\Users\marylu\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-api\2.8.9\springdoc-openapi-starter-webmvc-api-2.8.9.jar = 1752222554269
+C:\Users\marylu\.m2\repository\org\springdoc\springdoc-openapi-starter-common\2.8.9\springdoc-openapi-starter-common-2.8.9.jar = 1752222554310
+C:\Users\marylu\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.5.3\spring-boot-starter-validation-3.5.3.jar = 1751294227017
+C:\Users\marylu\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.2.Final\hibernate-validator-8.0.2.Final.jar = 1750323318836
+C:\Users\marylu\.m2\repository\org\jboss\logging\jboss-logging\3.6.1.Final\jboss-logging-3.6.1.Final.jar = 1750323318373
+C:\Users\marylu\.m2\repository\com\fasterxml\classmate\1.7.0\classmate-1.7.0.jar = 1750323318267
+C:\Users\marylu\.m2\repository\io\swagger\core\v3\swagger-core-jakarta\2.2.30\swagger-core-jakarta-2.2.30.jar = 1752222554177
+C:\Users\marylu\.m2\repository\org\apache\commons\commons-lang3\3.17.0\commons-lang3-3.17.0.jar = 1746522470177
+C:\Users\marylu\.m2\repository\io\swagger\core\v3\swagger-annotations-jakarta\2.2.30\swagger-annotations-jakarta-2.2.30.jar = 1752222555295
+C:\Users\marylu\.m2\repository\io\swagger\core\v3\swagger-models-jakarta\2.2.30\swagger-models-jakarta-2.2.30.jar = 1752222554034
+C:\Users\marylu\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar = 1750323199506
+C:\Users\marylu\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.19.1\jackson-dataformat-yaml-2.19.1.jar = 1752221964231
+C:\Users\marylu\.m2\repository\org\webjars\swagger-ui\5.21.0\swagger-ui-5.21.0.jar = 1752222555972
+C:\Users\marylu\.m2\repository\org\webjars\webjars-locator-lite\1.1.0\webjars-locator-lite-1.1.0.jar = 1752222554359
+C:\Users\marylu\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar = 1752222554541
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\SleepSOAPAdapter\src\main\java = 1751558494450
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\SleepSOAPAdapter\target\generated-sources\cxf = 1752526920014
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\SleepSOAPAdapter\target\generated-sources\annotations = 1752526920295
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\SleepSOAPAdapter\target\reports\apidocs\allclasses-index.html = 1752526923676
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\SleepSOAPAdapter\target\reports\apidocs\allpackages-index.html = 1752526923689
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\SleepSOAPAdapter\target\reports\apidocs\copy.svg = 1752526923772
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\SleepSOAPAdapter\target\reports\apidocs\element-list = 1752526923382
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\SleepSOAPAdapter\target\reports\apidocs\help-doc.html = 1752526923758
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\SleepSOAPAdapter\target\reports\apidocs\index-all.html = 1752526923745
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\SleepSOAPAdapter\target\reports\apidocs\index.html = 1752526923648
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\SleepSOAPAdapter\target\reports\apidocs\link.svg = 1752526923773
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\SleepSOAPAdapter\target\reports\apidocs\member-search-index.js = 1752526923698
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\SleepSOAPAdapter\target\reports\apidocs\module-search-index.js = 1752526923693
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\SleepSOAPAdapter\target\reports\apidocs\overview-summary.html = 1752526923752
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\SleepSOAPAdapter\target\reports\apidocs\overview-tree.html = 1752526923633
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\SleepSOAPAdapter\target\reports\apidocs\package-search-index.js = 1752526923694
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\SleepSOAPAdapter\target\reports\apidocs\script.js = 1752526923769
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\SleepSOAPAdapter\target\reports\apidocs\search-page.js = 1752526923784
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\SleepSOAPAdapter\target\reports\apidocs\search.html = 1752526923749
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\SleepSOAPAdapter\target\reports\apidocs\search.js = 1752526923779
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\SleepSOAPAdapter\target\reports\apidocs\stylesheet.css = 1752526923767
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\SleepSOAPAdapter\target\reports\apidocs\tag-search-index.js = 1752526923699
+C:\Users\marylu\Desktop\univaq\SOSE\marylu-project\SleepSOAPAdapter\target\reports\apidocs\type-search-index.js = 1752526923696

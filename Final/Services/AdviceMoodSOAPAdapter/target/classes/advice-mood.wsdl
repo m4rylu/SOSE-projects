@@ -1,0 +1,71 @@
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://mood.advice.sose.it/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="AdviceMoodImplService" targetNamespace="http://mood.advice.sose.it/">
+<wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://mood.advice.sose.it/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://mood.advice.sose.it/" version="1.0">
+<xs:element name="advice" type="tns:advice"/>
+<xs:element name="adviceResponse" type="tns:adviceResponse"/>
+<xs:complexType name="advice">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="adviceResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ExecutionException" type="tns:ExecutionException"/>
+<xs:complexType name="ExecutionException">
+<xs:sequence>
+<xs:element minOccurs="0" name="message" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="InterruptedException" type="tns:InterruptedException"/>
+<xs:complexType name="InterruptedException">
+<xs:sequence>
+<xs:element minOccurs="0" name="message" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
+</wsdl:types>
+<wsdl:message name="ExecutionException">
+<wsdl:part element="tns:ExecutionException" name="ExecutionException"> </wsdl:part>
+</wsdl:message>
+<wsdl:message name="InterruptedException">
+<wsdl:part element="tns:InterruptedException" name="InterruptedException"> </wsdl:part>
+</wsdl:message>
+<wsdl:message name="advice">
+<wsdl:part element="tns:advice" name="parameters"> </wsdl:part>
+</wsdl:message>
+<wsdl:message name="adviceResponse">
+<wsdl:part element="tns:adviceResponse" name="parameters"> </wsdl:part>
+</wsdl:message>
+<wsdl:portType name="AdviceMood">
+<wsdl:operation name="advice">
+<wsdl:input message="tns:advice" name="advice"> </wsdl:input>
+<wsdl:output message="tns:adviceResponse" name="adviceResponse"> </wsdl:output>
+<wsdl:fault message="tns:ExecutionException" name="ExecutionException"> </wsdl:fault>
+<wsdl:fault message="tns:InterruptedException" name="InterruptedException"> </wsdl:fault>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="AdviceMoodImplServiceSoapBinding" type="tns:AdviceMood">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="advice">
+<soap:operation soapAction="" style="document"/>
+<wsdl:input name="advice">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="adviceResponse">
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="ExecutionException">
+<soap:fault name="ExecutionException" use="literal"/>
+</wsdl:fault>
+<wsdl:fault name="InterruptedException">
+<soap:fault name="InterruptedException" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="AdviceMoodImplService">
+<wsdl:port binding="tns:AdviceMoodImplServiceSoapBinding" name="AdviceMoodImplPort">
+<soap:address location="http://localhost:8083/AdviceMoodSOAPProsumerServiceMaven/moodAdvice"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

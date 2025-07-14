@@ -1,0 +1,111 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://sleep.soap.sose.it" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://sleep.soap.sose.it" targetNamespace="http://sleep.soap.sose.it">
+<wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://sleep.soap.sose.it" version="1.0">
+<xs:element name="addRequest">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="addResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="return" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="lastValuesRequest">
+<xs:complexType>
+<xs:sequence/>
+</xs:complexType>
+</xs:element>
+<xs:element name="lastValuesResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="return" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="printRequest">
+<xs:complexType>
+<xs:sequence/>
+</xs:complexType>
+</xs:element>
+<xs:element name="printResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="return" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>
+</wsdl:types>
+<wsdl:message name="addRequest">
+<wsdl:part element="tns:addRequest" name="addRequest"> </wsdl:part>
+</wsdl:message>
+<wsdl:message name="printResponse">
+<wsdl:part element="tns:printResponse" name="printResponse"> </wsdl:part>
+</wsdl:message>
+<wsdl:message name="addResponse">
+<wsdl:part element="tns:addResponse" name="addResponse"> </wsdl:part>
+</wsdl:message>
+<wsdl:message name="printRequest">
+<wsdl:part element="tns:printRequest" name="printRequest"> </wsdl:part>
+</wsdl:message>
+<wsdl:message name="lastValuesRequest">
+<wsdl:part element="tns:lastValuesRequest" name="lastValuesRequest"> </wsdl:part>
+</wsdl:message>
+<wsdl:message name="lastValuesResponse">
+<wsdl:part element="tns:lastValuesResponse" name="lastValuesResponse"> </wsdl:part>
+</wsdl:message>
+<wsdl:portType name="sleepTrackerPort">
+<wsdl:operation name="add">
+<wsdl:input message="tns:addRequest" name="addRequest"> </wsdl:input>
+<wsdl:output message="tns:addResponse" name="addResponse"> </wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="print">
+<wsdl:input message="tns:printRequest" name="printRequest"> </wsdl:input>
+<wsdl:output message="tns:printResponse" name="printResponse"> </wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="lastValues">
+<wsdl:input message="tns:lastValuesRequest" name="lastValuesRequest"> </wsdl:input>
+<wsdl:output message="tns:lastValuesResponse" name="lastValuesResponse"> </wsdl:output>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="sleepTrackerPortSoap11" type="tns:sleepTrackerPort">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="add">
+<soap:operation soapAction=""/>
+<wsdl:input name="addRequest">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="addResponse">
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="print">
+<soap:operation soapAction=""/>
+<wsdl:input name="printRequest">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="printResponse">
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="lastValues">
+<soap:operation soapAction=""/>
+<wsdl:input name="lastValuesRequest">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="lastValuesResponse">
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="sleepTrackerPortService">
+<wsdl:port binding="tns:sleepTrackerPortSoap11" name="sleepTrackerPortSoap11">
+<soap:address location="http://localhost:8082/services"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

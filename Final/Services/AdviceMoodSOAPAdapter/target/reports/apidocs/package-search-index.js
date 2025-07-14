@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"it.sose.advice.mood"},{"l":"it.sose.soap.adapter"},{"l":"it.sose.soap.adapter.client"},{"l":"it.sose.soap.adapter.controller"},{"l":"it.sose.soap.adapter.service"}];updateSearchResults();

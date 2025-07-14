@@ -9,7 +9,9 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Arrays;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.ws.rs.Path;
+import jakarta.ws.rs.core.Context;
 
 /**
  * Implementation of the Rate My Day Tracker Service.
@@ -29,10 +31,15 @@ public class RateMyDayTrackerImpl implements RateMyDayTracker, Serializable{
 	private int[][] rateMatrix = new int[12][31];
 	
 	/**
-	 * Path of file where save/load serialized data
+	 * Path of directory where save/load serialized data
 	 */
-	private static final String FILE_PATH = "/usr/local/tomcat/webapps/data/rate_tracker.ser";
+	private static final String BASE_DIR = "/usr/local/tomcat/webapps/data/";
 	
+	
+    // Inject the current HTTP request to retrieve client IP
+    @Context
+    private HttpServletRequest request;
+    
 	/**
 	 * Constructor: if exist a file, load the data into the matrix
 	 */
@@ -145,7 +152,8 @@ public class RateMyDayTrackerImpl implements RateMyDayTracker, Serializable{
 	 * Save the current object on file using Java serialization
 	 */
 	private void serialize() {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FILE_PATH))) {
+        String path = getFilePathForClient();
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(path))) {
             oos.writeObject(this);
         } catch (IOException e) {
             e.printStackTrace();
@@ -157,11 +165,31 @@ public class RateMyDayTrackerImpl implements RateMyDayTracker, Serializable{
 	 * @return 		The deserialized instance of RateMyDayTrackerImpl if exists, or null.	
 	 */
     private RateMyDayTrackerImpl deserialize() {
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_PATH))) {
+        String path = getFilePathForClient();
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(path))) {
             return (RateMyDayTrackerImpl) ois.readObject();
         } catch (IOException | ClassNotFoundException e) {
             return null;
         }
+    }
+    
+    private String getFilePathForClient() {
+        String clientIP = getClientIP();
+        return BASE_DIR + "rate_tracker_" + clientIP + ".ser";
+    }
+
+    /**
+     * Extracts the client's IP address from the HTTP request.
+     * Uses X-Forwarded-For header if behind a proxy, or fallback to direct remote IP.
+     * Non-digit characters are replaced to ensure safe filenames.
+     */
+    private String getClientIP() {
+        if (request == null) return "unknown";
+        String ip = request.getHeader("X-Forwarded-For");
+        if (ip == null || ip.isEmpty()) {
+            ip = request.getRemoteAddr();
+        }
+        return ip.replaceAll("[^\\d.]", "_"); // Safe for filenames
     }
 		
 }

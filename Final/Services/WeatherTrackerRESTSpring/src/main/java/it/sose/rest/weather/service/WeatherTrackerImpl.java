@@ -1,3 +1,4 @@
+
 package it.sose.rest.weather.service;
 
 import org.springframework.stereotype.Service;

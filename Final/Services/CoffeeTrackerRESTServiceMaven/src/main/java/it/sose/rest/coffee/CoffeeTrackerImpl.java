@@ -83,7 +83,7 @@ public class CoffeeTrackerImpl implements CoffeeTracker, Serializable{
 	/**
 	 * Second method of the interface, "add" that adds the number of coffee taken for 
 	 * current date. If the value is out of bounds, return an error message.
-	 * @param mood The number corresponding to the today's coffee taken.
+	 * @param coffee The number corresponding to the today's coffee taken.
 	 * @return     A string with the current date if the operation was successful.
 	 */
 	@Override

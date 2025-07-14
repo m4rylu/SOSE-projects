@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"it.sose.soap.umor","l":"SimpleCXFNonSpringServlet"},{"p":"it.sose.soap.umor","l":"UmorTracker"},{"p":"it.sose.soap.umor","l":"UmorTrackerImpl"}];updateSearchResults();

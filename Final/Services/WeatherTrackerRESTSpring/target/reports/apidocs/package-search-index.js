@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"it.sose.rest.weather"},{"l":"it.sose.rest.weather.controller"},{"l":"it.sose.rest.weather.service"}];updateSearchResults();

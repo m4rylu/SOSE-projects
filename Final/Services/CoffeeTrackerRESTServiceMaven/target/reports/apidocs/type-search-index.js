@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"it.sose.rest.coffee","l":"CoffeeTracker"},{"p":"it.sose.rest.coffee","l":"CoffeeTrackerImpl"}];updateSearchResults();

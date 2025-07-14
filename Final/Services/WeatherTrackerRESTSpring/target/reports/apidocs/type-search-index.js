@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"it.sose.rest.weather.controller","l":"WeatherControllerwithConstructorInjection"},{"p":"it.sose.rest.weather.service","l":"WeatherTracker"},{"p":"it.sose.rest.weather","l":"WeatherTrackerApplication"},{"p":"it.sose.rest.weather.service","l":"WeatherTrackerImpl"}];updateSearchResults();
