@@ -50,7 +50,7 @@ public class WeatherControllerwithConstructorInjection {
         @ApiResponse(responseCode = "200", description = "Matrix printed successfully"),
     })
     @GetMapping("/print")
-    public String print(ServerHttpRequest request) {
+    public String print() {
         return weatherTracker.printWeatherTracker();
     }
     
@@ -67,7 +67,7 @@ public class WeatherControllerwithConstructorInjection {
             @ApiResponse(responseCode = "200", description = "Invalid weather value")
     })
     @GetMapping("/add/{a}")
-    public String add(@PathVariable int a, ServerHttpRequest request) {
+    public String add(@PathVariable int a) {
         return weatherTracker.addWeatherTracker(a);
     }
     
@@ -81,7 +81,7 @@ public class WeatherControllerwithConstructorInjection {
         @ApiResponse(responseCode = "200", description = "Successfully retrieved weather values")
     })
     @GetMapping("/lastValues")
-    public String lastValues(ServerHttpRequest request) {
+    public String lastValues() {
         return weatherTracker.last7DaysValues();
     }
 }

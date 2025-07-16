@@ -1,0 +1,101 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "OpenAPI definition",
+    "version": "v0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8086",
+      "description": "Generated server url"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Weather Tracker",
+      "description": "Provides weather tracking data logic"
+    }
+  ],
+  "paths": {
+    "/WeatherTrackerRESTSpring/print": {
+      "get": {
+        "tags": [
+          "Weather Tracker"
+        ],
+        "summary": "Print weather tracking matrix",
+        "description": "Returns a formatted string of all recorded weather data by month and day",
+        "operationId": "print",
+        "responses": {
+          "200": {
+            "description": "Matrix printed successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WeatherTrackerRESTSpring/lastValues": {
+      "get": {
+        "tags": [
+          "Weather Tracker"
+        ],
+        "summary": "Get last 7 days' values",
+        "description": "Retrieves weather values recorded in the last 7 days (excluding today)",
+        "operationId": "lastValues",
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved weather values",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WeatherTrackerRESTSpring/add/{a}": {
+      "get": {
+        "tags": [
+          "Weather Tracker"
+        ],
+        "summary": "Add today's weather value",
+        "description": "Adds a new weather value for the current day",
+        "operationId": "add",
+        "parameters": [
+          {
+            "name": "a",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Invalid weather value",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+
+  }
+}

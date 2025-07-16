@@ -1,0 +1,24 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "contact" : { },
+    "license" : {
+      "name" : "Apache 2.0 License",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "paths" : {
+    "/advice" : {
+      "get" : {
+        "summary" : "Print coffee and sleep advice ",
+        "description" : "Returns a formatted string with a personalized advice based on the last values of the user",
+        "operationId" : "getAdviceCoffee",
+        "responses" : {
+          "200" : {
+            "description" : "Advice printed successfully"
+          }
+        }
+      }
+    }
+  }
+}

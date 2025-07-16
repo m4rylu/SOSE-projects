@@ -1,0 +1,46 @@
+<application xmlns="http://wadl.dev.java.net/2009/02" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<grammars/>
+<resources base="http://coffee-service:8080/CoffeeTrackerRESTServiceMaven/coffee">
+<resource path="/">
+<resource path="add/{a}">
+<param name="a" style="template" type="xs:int"/>
+<method name="GET">
+<request/>
+<response>
+<representation mediaType="text/plain">
+<param name="result" style="plain" type="xs:string"/>
+</representation>
+</response>
+</method>
+</resource>
+<resource path="lastValues">
+<method name="GET">
+<response>
+<representation mediaType="text/plain">
+<param name="result" style="plain" type="xs:string"/>
+</representation>
+</response>
+</method>
+</resource>
+<resource path="print">
+<method name="GET">
+<response>
+<representation mediaType="text/plain">
+<param name="result" style="plain" type="xs:string"/>
+</representation>
+</response>
+</method>
+</resource>
+</resource>
+<resource path="/openapi.{type:json|yaml}">
+<param name="type" style="template" type="xs:string"/>
+<method name="GET">
+<request/>
+<response>
+<representation mediaType="application/json"/>
+<representation mediaType="application/yaml"/>
+</response>
+</method>
+</resource>
+</resources>
+</application>

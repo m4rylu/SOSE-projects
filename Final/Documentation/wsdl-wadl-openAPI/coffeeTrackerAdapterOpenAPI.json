@@ -1,0 +1,57 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "contact" : { },
+    "license" : {
+      "name" : "Apache 2.0 License",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "paths" : {
+    "/add/{a}" : {
+      "get" : {
+        "summary" : "Add today's coffee number",
+        "description" : "Adds a new coffee taken number for the current day",
+        "operationId" : "addCoffeeTracker",
+        "parameters" : [ {
+          "name" : "a",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Value added successfully"
+          }
+        }
+      }
+    },
+    "/lastValues" : {
+      "get" : {
+        "summary" : "Get last 7 days' values",
+        "description" : "Retrieves coffee numbers recorded in the last 7 days (excluding today)",
+        "operationId" : "last7DaysValues",
+        "responses" : {
+          "200" : {
+            "description" : "Successfully retrieved coffee number"
+          }
+        }
+      }
+    },
+    "/print" : {
+      "get" : {
+        "summary" : "Print coffee tracking matrix",
+        "description" : "Returns a formatted string of all recorded coffee data by month and day",
+        "operationId" : "printCoffeeTracker",
+        "responses" : {
+          "200" : {
+            "description" : "Matrix printed successfully"
+          }
+        }
+      }
+    }
+  }
+}

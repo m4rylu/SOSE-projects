@@ -1,0 +1,59 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "contact": {
+
+    },
+    "license": {
+      "name": "Apache 2.0 License",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "paths": {
+    "/coffeeData": {
+      "get": {
+        "summary": "Get coffee data analysis for the past week",
+        "description": "Calls the CoffeeTracker REST service asynchronously to retrieve coffee values for the last 7 days, calculates statistics, serializes data, and returns a summary.",
+        "operationId": "getCoffeeData",
+        "responses": {
+          "200": {
+            "description": "Values print successfully"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/humorData": {
+      "get": {
+        "summary": "Get humor data analysis for the past week",
+        "description": "Calls the UmorTracker SOAP service asynchronously to retrieve humor values for the last 7 days, calculates statistics, serializes data, and returns a summary.",
+        "operationId": "getHumorData",
+        "responses": {
+          "200": {
+            "description": "Values print successfully"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/sleepData": {
+      "get": {
+        "summary": "Get sleep data analysis for the past week",
+        "description": "Calls the SleepTracker SOAP service asynchronously to retrieve sleep values for the last 7 days, calculates statistics, serializes data, and returns a summary.",
+        "operationId": "getSleepData",
+        "responses": {
+          "200": {
+            "description": "Values print successfully"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+<application xmlns="http://wadl.dev.java.net/2009/02" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<grammars/>
+<resources base="http://advice-coffee-service:8081/AdviceCoffeeRESTProsumerService/coffeeAdvice">
+<resource path="/">
+<resource path="advice">
+<method name="GET">
+<response>
+<representation mediaType="text/plain">
+<param name="result" style="plain" type="xs:string"/>
+</representation>
+</response>
+</method>
+</resource>
+</resource>
+<resource path="/openapi.{type:json|yaml}">
+<param name="type" style="template" type="xs:string"/>
+<method name="GET">
+<request/>
+<response>
+<representation mediaType="application/json"/>
+<representation mediaType="application/yaml"/>
+</response>
+</method>
+</resource>
+</resources>
+</application>
