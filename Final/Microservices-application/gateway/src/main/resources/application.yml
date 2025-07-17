@@ -7,11 +7,11 @@ spring:
       server:
         webflux:
           routes:
-            - id: coffee
-              uri: http://coffee-service:8080
-              predicates:
+            - id: coffee # unique name for the route
+              uri: http://coffee-service:8080 # destination URI for the service, using the Docker service name
+              predicates: # defines when this route should be applied
               - Path=/api/coffee/**
-              filters:
+              filters: # rewrite parts of the request path before forwarding them to the target service.
               - RewritePath=/api/coffee/wadl, /CoffeeTrackerRESTServiceMaven/coffee?_wadl
               - RewritePath=/api/coffee/openapi, /CoffeeTrackerRESTServiceMaven/coffee/openapi.json
               - RewritePath=/api/coffee/(?<segment>.*), /CoffeeTrackerRESTServiceMaven/coffee/${segment}

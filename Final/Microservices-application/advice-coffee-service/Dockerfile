@@ -1,14 +1,14 @@
-# Usa Tomcat 11 con Java 21
+# Use Tomcat 11 with Java 21
 FROM tomcat:11-jdk21
 
-# Usa impostazioni personalizzate per il server
+# Use custom server configuration
 COPY server.xml /usr/local/tomcat/conf/server.xml
 
-# Espone porta 
+# Expose the application port
 EXPOSE 8081
 
-# Rimuove la webapp ROOT di default
+# Remove default ROOT application
 RUN rm -rf /usr/local/tomcat/webapps/*
 
-# Copia il .war nella cartella webapps
+# Copy the WAR file into the webapps folder
 COPY target/AdviceCoffeeRESTProsumerService.war /usr/local/tomcat/webapps/AdviceCoffeeRESTProsumerService.war

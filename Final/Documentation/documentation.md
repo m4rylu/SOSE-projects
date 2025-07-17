@@ -18,7 +18,7 @@ Future improvements will include support for multi-user management and integrati
 The project was developed and tested on Windows, but it should run on any operating system that supports Docker or Docker Compose. However, it has not been tested on platforms other than Windows.
 
 The requirements for running the projects are:
-- Docker Desktop (recommended at least version 4.43.1)
+- Docker Desktop (recommended version 4.43.1 or higher)
 - Git (optional, for cloning the project)
 - Java, Maven and Tomcat are not required locally, everything is managed within Docker containers.
 
@@ -83,11 +83,11 @@ Key advantages of this architecture include:
 
 | Service | Endpoint | Technology | Role |
 |-----------|-----------|-----------|-----------|
-| CoffeeTracker | REST | CXF | Producer | 
-| SleepTracker | SOAP | Spring Boot | Producer |
-| RateMyDayTracker | REST| CXF | Producer |
-| UmorTracker | SOAP | CXF | Producer | 
-| WeatherTracker | REST | Spring Boot | Producer |
+| CoffeeTracker | REST | CXF | Provider | 
+| SleepTracker | SOAP | Spring Boot | Provider |
+| RateMyDayTracker | REST| CXF | Provider |
+| UmorTracker | SOAP | CXF | Provider | 
+| WeatherTracker | REST | Spring Boot | Provider |
 | AdviceCoffee | REST | CXF | Prosumer |
 | AdviceMood | SOAP | CXF | Prosumer |
 | Data Analysis | REST | CXF | Prosumer |

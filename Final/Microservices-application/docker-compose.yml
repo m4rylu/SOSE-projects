@@ -15,14 +15,15 @@ services:
       - humor-adapter
       - sleep-adapter
       - advice-mood-adapter
+      - data-analysis-service
 
   coffee-service:
-    build: ./coffee-service
-    container_name: coffee-service
+    build: ./coffee-service # builds the image using the Dockerfile in the coffee-service folder
+    container_name: coffee-service # set the container name
     volumes:
-      - ./coffee-service/data:/usr/local/tomcat/webapps/data 
+      - ./coffee-service/data:/usr/local/tomcat/webapps/data # mounts a data folder inside the container
     ports:
-      - "8080:8080"
+      - "8080:8080" # maps container port 8080 to host port 8080
 
   sleep-service:
     build: ./sleep-service
@@ -61,30 +62,42 @@ services:
     container_name: advice-coffee-service
     ports:
     - "8081:8081"
+    depends_on:
+      - coffee-service
+      - sleep-service
 
   advice-mood-service:
     build: ./advice-mood-service
     container_name: advice-mood-service
     ports:
     - "8083:8083"
+    depends_on:
+      - humor-service
+      - rate-service
 
   humor-adapter:
     build: ./humor-adapter
     container_name: humor-adapter
     ports:
       - "8088:8088"
+    depends_on:
+      - humor-service
 
   sleep-adapter:
     build: ./sleep-adapter
     container_name: sleep-adapter
     ports:
       - "8089:8089"
+    depends_on:
+      - sleep-service
 
   advice-mood-adapter:
     build: ./advice-mood-adapter
     container_name: advice-mood-adapter
     ports:
       - "8090:8090"
+    depends_on:
+      - advice-mood-service
 
   data-analysis-service:
     build: ./data-analysis-service
@@ -93,5 +106,9 @@ services:
       - ./data-analysis-service/data:/usr/local/tomcat/webapps/data 
     ports:
       - "8091:8091"
+    depends_on:
+      - coffee-service
+      - sleep-service
+      - humor-service
 
       
