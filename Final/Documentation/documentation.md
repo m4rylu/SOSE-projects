@@ -1,7 +1,7 @@
 # 📌 **Tracker Application**
 
 **Version:** 1.0  
-**Last Update:** 17/07/2025
+**Last Update:** 21/07/2025
 
 ## 📖 **Introduction**
 This project was developed for the *Software-Oriented Software Engineering (SOSE)* course, with the aim of exploring REST and SOAP methodologies for building web services in Java.
@@ -177,7 +177,7 @@ The following sequence diagram illustrates the execution flow of the *add(int i)
 
 ![Sleep Tracker Sequence Diagram](media/sequenceDiagram-sleepTrackerAdd.JPG)
 
-### **`RateMyDayTrackerSOAPSpringService` - Provider Service**
+### **`RateMyDayTrackerRESTSpringService` - Provider Service**
 Rate Tracker is a Java-based web service developed using framework Apache CXF and configured via Maven for dependency management. The service provides a RESTful API exposing three operations that allow clients to interact with rating days tracking functionalities that involves serialization and deserialization for storing permanently data in a single file.
 
 It is implemented using Jakarta for RESTful Web Services and deployed through a non-Spring CXF servlet, specifically the CXFNonSpringJaxrsServlet provided by jaxrs.servlet.
@@ -450,7 +450,7 @@ Available Endpoints:
 #### **Sequence Diagram**
 The following sequence diagram illustrates the execution flow of the *getSleepData()* operation in the Data Analysis Service. Although this example focuses on the Sleep Tracker, the interaction flow of **getHumorData()* is equivalent to the *getSleepData()* operation
 
-![Data Analysis Sleep Sequence Diagram](media/sequenceDiagram-AdviceMoodJPG.JPG)
+![Data Analysis Sleep Sequence Diagram](media/sequenceDiagram-dataAnalysisSleepData.JPG)
 
 #### **Use of Asynchronous Communication**
 The service incorporates asynchronous communication when interacting with the tracker services. It utilizes the asynchronous versions of the methods (for SOAP) or sends asynchronous HTTP requests (for REST) to initiate non-blocking calls that return immediately with a future-like response.
@@ -593,4 +593,4 @@ In addition to the in-code Javadoc comments, the Javadoc documentation for each 
 📧 **Email:** nour.albustani@student.univaq.it, mariaalberta.caradio@student.univaq.it, ramah.juha@student.univaq.it
 🔗 **GitHub:** [(https://github.com/m4rylu/SOSE-Tracker-Application.git)]  
 
-📌 *Ultimo aggiornamento: [17/07/2025]*
+📌 *Ultimo aggiornamento: [21/07/2025]*
